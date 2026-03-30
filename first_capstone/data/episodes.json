@@ -1,0 +1,24 @@
+{
+  "id": "ep1",
+  "podcastId": "pod1",
+  "title": "كيف تتعامل مع الضغط",
+  "description": "حلقة عن إدارة التوتر",
+  "audioUrl": "https://...",
+  "publishDate": "2026-03-30",
+  "coverImage": "https://...",
+  
+  "stats": {
+    "plays": 5000,
+    "likes": 1200,
+    "comments": 150
+  },
+
+  "reactions": {
+    "fire": 300,
+    "mindBlown": 200,
+    "funny": 150,
+    "sleepy": 50
+  }
+
+
+}

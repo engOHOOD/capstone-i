@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "سوالف بزنس",
+    "description": "بودكاست للمهتمين بالبزنس وريادة الأعمال. كل حلقة راح تسمع تجربة شخص في البزنس بتفاصيلها، بدون مجاملات أو تنظير.",
+    "coverImage": "capstone-i-engOHOOD/first_capstone/assets/images/swalif.png",
+    "category": "society",
+    "followersCount": 12000,
+    "rating": 4.8,
+    "episodesCount": 4
+  },
+  {
+    "id": 2,
+    "title": "ذا قال",
+    "description":"بودكاست قريب من الشاعر، بعيد عن المنابر والاستديوهات. في كل حلقة يشد خالد عون رِحاله إلى مجلس الشاعر وديرته، نسمع منه القصائد كما وُلدت، ويحكي لنا الجانب الخفي من علاقته بالشعر.",
+    "coverImage": "capstone-i-engOHOOD/first_capstone/assets/images/thaqal.png",
+    "category": "society",
+    "followersCount": 12000,
+    "rating": 4.8,
+    "episodesCount": 4
+  },
+  {
+    "id": 3,
+    "title": "نايف حمدان",
+    "description":"نغزو الاندلس",
+    "coverImage": "capstone-i-engOHOOD/first_capstone/assets/images/naif_hamdan1.jpg",
+    "category": "society",
+    "followersCount": 12000,
+    "rating": 4.8,
+    "episodesCount": 4
+  }
+]
