@@ -1,3 +1,4 @@
+import 'package:first_capstone/core/navigation/route_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,8 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp.router(
-    
-    );
+    return MaterialApp.router(routerConfig: RouteApp.router);
   }
 }
