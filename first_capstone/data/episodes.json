@@ -6,19 +6,15 @@
   "audioUrl": "assets/podcasts/swalif/YTDown.com_YouTube_Media_MXiDzEc2Mb4_009_128k.mp3",
   "publishDate": "2026-03-30",
   "coverImage": "assets/images/thaqal.png",
-  
   "stats": {
     "plays": 5000,
+    "reactions": {
+      "fire": 300,
+      "mindBlown": 200,
+      "funny": 150,
+      "sleepy": 50
+    },
     "likes": 1200,
     "comments": 150
-  },
-
-  "reactions": {
-    "fire": 300,
-    "mindBlown": 200,
-    "funny": 150,
-    "sleepy": 50
   }
-
-
 }
