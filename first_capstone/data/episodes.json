@@ -1,11 +1,11 @@
 {
-  "id": "ep1",
-  "podcastId": "pod1",
+  "id": 1,
+  "podcastId": 1,
   "title": "كيف تتعامل مع الضغط",
   "description": "حلقة عن إدارة التوتر",
-  "audioUrl": "https://...",
+  "audioUrl": "assets/podcasts/swalif/YTDown.com_YouTube_Media_MXiDzEc2Mb4_009_128k.mp3",
   "publishDate": "2026-03-30",
-  "coverImage": "https://...",
+  "coverImage": "assets/images/thaqal.png",
   
   "stats": {
     "plays": 5000,

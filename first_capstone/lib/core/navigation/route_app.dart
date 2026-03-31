@@ -1,5 +1,7 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/screen/bottom_navigation/bottom_navigation_screen.dart';
+import 'package:first_capstone/screen/epsiode/cubit/epsiode_cubit.dart';
+import 'package:first_capstone/screen/epsiode/epsiode_screen.dart';
 import 'package:first_capstone/screen/home/bloc/home_bloc.dart';
 import 'package:first_capstone/screen/home/home_screen.dart';
 import 'package:first_capstone/screen/library/bloc/library_bloc.dart';
@@ -38,9 +40,10 @@ class RouteApp {
               GoRoute(
                 path: RouteKeys.search,
                 builder: (context, state) {
+                  print("here");
                   return BlocProvider(
-                    create: (context) => SearchBloc(),
-                    child: SearchScreen(),
+                    create: (context) => EpsiodeCubit()..loadEpsiode(),
+                    child: EpsiodeScreen(),
                   );
                 },
               ),
