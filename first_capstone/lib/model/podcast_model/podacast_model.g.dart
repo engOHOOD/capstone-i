@@ -14,9 +14,7 @@ _PodacastModel _$PodacastModelFromJson(Map<String, dynamic> json) =>
       coverImage: json['coverImage'] as String,
       followersCount: (json['followersCount'] as num).toInt(),
       rating: json['rating'] as num,
-      epsiodes: (json['epsiodes'] as List<dynamic>)
-          .map((e) => EpsiodeModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      episodesCount: (json['episodesCount'] as num).toInt(),
     );
 
 Map<String, dynamic> _$PodacastModelToJson(_PodacastModel instance) =>
@@ -27,5 +25,5 @@ Map<String, dynamic> _$PodacastModelToJson(_PodacastModel instance) =>
       'coverImage': instance.coverImage,
       'followersCount': instance.followersCount,
       'rating': instance.rating,
-      'epsiodes': instance.epsiodes,
+      'episodesCount': instance.episodesCount,
     };

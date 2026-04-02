@@ -9,21 +9,27 @@ part of 'epsiode_model.dart';
 _EpsiodeModel _$EpsiodeModelFromJson(Map<String, dynamic> json) =>
     _EpsiodeModel(
       id: (json['id'] as num).toInt(),
+      podcastId: (json['podcastId'] as num).toInt(),
       title: json['title'] as String,
       description: json['description'] as String,
       coverImage: json['coverImage'] as String,
-      followersCount: (json['followersCount'] as num).toInt(),
-      rating: json['rating'] as num,
-      episodesCount: (json['episodesCount'] as num).toInt(),
+      audioUrl: json['audioUrl'] as String,
+      publishDate: json['publishDate'] as String,
+      plays: (json['plays'] as num).toInt(),
+      likes: (json['likes'] as num).toInt(),
+      comments: (json['comments'] as num).toInt(),
     );
 
 Map<String, dynamic> _$EpsiodeModelToJson(_EpsiodeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'podcastId': instance.podcastId,
       'title': instance.title,
       'description': instance.description,
       'coverImage': instance.coverImage,
-      'followersCount': instance.followersCount,
-      'rating': instance.rating,
-      'episodesCount': instance.episodesCount,
+      'audioUrl': instance.audioUrl,
+      'publishDate': instance.publishDate,
+      'plays': instance.plays,
+      'likes': instance.likes,
+      'comments': instance.comments,
     };

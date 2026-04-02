@@ -1,0 +1,12 @@
+[
+  { "id": 1, "userId": 1, "episodeId": 1001, "text": "أحببت هذه الحلقة عن الشركات الناشئة!", "timestamp": "2026-04-01T10:00:00Z", "likes": 5 },
+  { "id": 2, "userId": 2, "episodeId": 1001, "text": "نصائح رائعة للمبتدئين.", "timestamp": "2026-04-01T10:05:00Z", "likes": 3 },
+  { "id": 3, "userId": 3, "episodeId": 1003, "text": "تاريخ ممتع للغاية!", "timestamp": "2026-04-01T10:10:00Z", "likes": 4 },
+  { "id": 4, "userId": 4, "episodeId": 1005, "text": "نصائح Flutter مفيدة جداً.", "timestamp": "2026-04-01T10:15:00Z", "likes": 6 },
+  { "id": 5, "userId": 5, "episodeId": 1007, "text": "استراتيجيات التسويق رائعة.", "timestamp": "2026-04-01T10:20:00Z", "likes": 2 },
+  { "id": 1, "userId": 1, "episodeId": 1011, "text": "دروس التاريخ رائعة.", "timestamp": "2026-04-01T10:25:00Z", "likes": 3 },
+  { "id": 2, "userId": 2, "episodeId": 1015, "text": "كرة القدم هي المفضلة لدي.", "timestamp": "2026-04-01T10:30:00Z", "likes": 5 },
+  { "id": 3, "userId": 3, "episodeId": 1017, "text": "أحببت هذه الحلقة الموسيقية!", "timestamp": "2026-04-01T10:35:00Z", "likes": 7 },
+  { "id": 4, "userId": 4, "episodeId": 1019, "text": "نصائح السفر رائعة!", "timestamp": "2026-04-01T10:40:00Z", "likes": 4 },
+  { "id": 5, "userId": 5, "episodeId": 1002, "text": "نصائح التمويل مفيدة.", "timestamp": "2026-04-01T10:45:00Z", "likes": 3 }
+]

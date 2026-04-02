@@ -12,8 +12,8 @@ class BottomNavigationScreen extends StatelessWidget {
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.amber,
         currentIndex: navigationShell.currentIndex,
+       
         onTap: (index) => navigationShell.goBranch(index),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home),label:''),

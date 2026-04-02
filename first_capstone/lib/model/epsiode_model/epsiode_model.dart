@@ -7,16 +7,20 @@ part 'epsiode_model.freezed.dart';
 part 'epsiode_model.g.dart';
 
 @freezed
-abstract class EpsiodeModel with _$EpsiodeModel{
+abstract class EpsiodeModel with _$EpsiodeModel {
   const factory EpsiodeModel({
     required int id,
+    required int podcastId,
     required String title,
     required String description,
     required String coverImage,
-    required int followersCount,
-    required num rating,
-    required int episodesCount,
-  })=_EpsiodeModel;
+    required String audioUrl,
+    required String publishDate,
+    required int plays,
+    required int likes,
+    required int comments,
+  }) = _EpsiodeModel;
 
-  factory EpsiodeModel.fromJson(Map<String,Object?>json)=>_$EpsiodeModelFromJson(json);
+  factory EpsiodeModel.fromJson(Map<String, Object?> json) =>
+      _$EpsiodeModelFromJson(json);
 }
