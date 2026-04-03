@@ -4,7 +4,6 @@ import 'package:first_capstone/screen/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,15 +23,17 @@ class HomeScreen extends StatelessWidget {
                 automaticallyImplyLeading: false,
                 floating: true,
                 expandedHeight: 70,
-                flexibleSpace: const FlexibleSpaceBar(
+                flexibleSpace:  FlexibleSpaceBar(
                   centerTitle: false,
-                  title: Text('اهلا عهود'),
+                  title: Text('اهلا عهود',style: Theme.of(context).textTheme.titleLarge,),
                 ),
               ),
-              const SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 20,
-                  child: Center(child: Text('افضل البرامج تنتظرك هنا')),
+              SliverToBoxAdapter(
+                child: Center(
+                  child: Text(
+                    'افضل البرامج تنتظرك هنا',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                 ),
               ),
               SliverGap(20),

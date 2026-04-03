@@ -13,14 +13,17 @@ class EpisodesHorizontalGridWidget extends StatelessWidget {
       width: double.infinity,
       child: GridView.builder(
         scrollDirection: .horizontal,
+        physics: PageScrollPhysics(),
+        controller: PageController(viewportFraction: 0.9,),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisExtent: 340,
+          mainAxisExtent: 360,
         ),
         itemCount: podcasts.length,
         itemBuilder: (context, index) => SizedBox(
           child: ListTile(
-            title: Text(podcasts[index].title),
+
+            title: Text(podcasts[index].title,style: Theme.of(context).textTheme.titleSmall,),
             leading: AnyImageView(
               imagePath: podcasts[index].coverImage,
               fit: .fitHeight,
@@ -29,7 +32,7 @@ class EpisodesHorizontalGridWidget extends StatelessWidget {
               errorWidget: Icon(Icons.error),
             ),
             trailing: Container(
-              width: 50,
+              width: 60,
               height: 30,
               decoration: BoxDecoration(
                 color: Colors.amber.shade400,

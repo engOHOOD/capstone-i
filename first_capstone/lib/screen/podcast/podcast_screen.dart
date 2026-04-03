@@ -1,4 +1,5 @@
 import 'package:any_image_view/any_image_view.dart';
+import 'package:first_capstone/core/widget/image_widget.dart';
 import 'package:first_capstone/screen/podcast/cubit/podcast_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,20 +11,29 @@ class PodcastScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<PodcastCubit>().getPodcast();
-    // context.read<PodcastCubit>().getPodcastEpsiodes();
 
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
             BlocBuilder<PodcastCubit, PodcastState>(
-              buildWhen: (previous, current) => current is LoadedPodcast,
+              buildWhen: (previous, current) {
+                if (current is LoadedPodcast ) {
+
+                  return true;
+                }
+
+                return false;
+              },
 
               builder: (context, state) {
+
                 if (state is PodcastInitial) {
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcast) {
+                  print('JJJJJJJ');
+
                   return SliverMainAxisGroup(
                     slivers: [
                       SliverAppBar(
@@ -57,7 +67,7 @@ class PodcastScreen extends StatelessWidget {
                       SliverToBoxAdapter(
                         child: SizedBox(
                           height: 20,
-                          child: Center(child: Text('افضل البرامج تنتظرك هنا')),
+                          child: Center(child: Text(state.podcast.description)),
                         ),
                       ),
                     ],
@@ -70,23 +80,30 @@ class PodcastScreen extends StatelessWidget {
             BlocBuilder<PodcastCubit, PodcastState>(
               buildWhen: (previous, current) {
                 if (current is LoadedPodcast) {
+                  print('case 1');
+
                   return true;
                 }
                 if (current is LoadedPodcastEpsiodes) {
+                  print('case 2');
                   return true;
                 } else {
+                  print('case 2');
+
                   return false;
                 }
               },
               builder: (context, state) {
                 if (state is PodcastInitial) {
+                  print('case 2vvvvv');
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcastEpsiodes) {
+                  print('11111111111');
                   return SliverList.builder(
                     itemCount: state.epsiodes.length,
                     itemBuilder: (context, index) =>
-                        ListTile(title: Text(state.epsiodes[index].title)),
+                        ListTile(leading:ImageWidget(imagePath: state.epsiodes[index].coverImage) ,title: Text(state.epsiodes[index].title)),
                   );
                 }
                 return SliverToBoxAdapter(child: SizedBox.shrink());

@@ -9,6 +9,7 @@ environment:
 dependencies:
   any_image_view: ^2.1.0
   bloc: ^9.2.0
+  carousel_slider: ^5.1.2
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -34,8 +35,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - assets/images/
+   - assets/images/fnjan/
+   - assets/images/jenayah/
+   - assets/images/naif_hamdan/
+   - assets/images/swalif/
+   - assets/images/thaqal/
+   - assets/images/alfajr/
    - assets/podcasts/swalif/
+
    - assets/data/
   fonts:
     - family: Handicrafts

@@ -9,8 +9,9 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnyImageView(
       imagePath: imagePath,
-      width: 200,
-      fit: .cover,
+      width: 50,
+      height: 50,
+      fit: .fill,
       padding: EdgeInsets.all(10),
       borderRadius: BorderRadius.circular(25),
       placeholderWidget: CircularProgressIndicator(),

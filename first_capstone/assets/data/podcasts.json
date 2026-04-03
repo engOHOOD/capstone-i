@@ -1,32 +1,62 @@
 [
   {
     "id": 1,
-    "title": "سوالف بزنس",
-    "description": "بودكاست للمهتمين بالبزنس وريادة الأعمال. كل حلقة راح تسمع تجربة شخص في البزنس بتفاصيلها، بدون مجاملات أو تنظير.",
-    "coverImage": "assets/images/swalif.png",
+    "title": "فنجان",
+    "description": "كل يوم أحد. ضيف معي أنا عبدالرحمن أبومالح. في بودكاست فنجان، سنأخذ من كل مذاق رشفة. لا معايير، ولا مواضيع محددة، لكن الأكيد، هنا كثير من المتعة والفائدة.",
+    "coverImage": "assets/images/fnjan/fnjan.jpeg",
     "category": "society",
-    "followersCount": 12000,
-    "rating": 4.8,
-    "episodesCount": 4
+    "followersCount": 850000,
+    "rating": 4.9,
+    "episodesCount": 120
   },
   {
     "id": 2,
-    "title": "ذا قال",
-    "description":"بودكاست قريب من الشاعر، بعيد عن المنابر والاستديوهات. في كل حلقة يشد خالد عون رِحاله إلى مجلس الشاعر وديرته، نسمع منه القصائد كما وُلدت، ويحكي لنا الجانب الخفي من علاقته بالشعر.",
-    "coverImage": "assets/images/thaqal.png",
+    "title": "الفجر",
+    "description": "بودكاست قريب من الشاعر، بعيد عن المنابر والاستديوهات. في كل حلقة يشد خالد عون رِحاله إلى مجلس الشاعر وديرته، نسمع منه القصائد كما وُلدت، ويحكي لنا الجانب الخفي من علاقته بالشعر.",
+    "coverImage": "assets/images/alfajr/alfajr.jpeg",
     "category": "society",
-    "followersCount": 12000,
-    "rating": 4.8,
-    "episodesCount": 4
+    "followersCount": 95000,
+    "rating": 4.7,
+    "episodesCount": 35
   },
   {
     "id": 3,
     "title": "نايف حمدان",
-    "description":"نغزو الاندلس",
-    "coverImage": "assets/images/naif_hamdan.jpg",
-    "category": "society",
-    "followersCount": 12000,
+    "description": "نغزو الاندلس",
+    "coverImage": "assets/images/naif_hamdan/naif_hamdan.jpg",
+    "category": "history",
+    "followersCount": 400000,
+    "rating": 4.9,
+    "episodesCount": 60
+  },
+  {
+    "id": 4,
+    "title": "سوالف بزنس",
+    "description": "بودكاست للمهتمين بالبزنس وريادة الأعمال. كل حلقة راح تسمع تجربة شخص في البزنس بتفاصيلها، بدون مجاملات أو تنظير.",
+    "coverImage": "assets/images/swalif/swalif.png",
+    "category": "business",
+    "followersCount": 220000,
     "rating": 4.8,
-    "episodesCount": 4
+    "episodesCount": 210
+  },
+  {
+    "id": 5,
+    "title": "ذا قال",
+    "description": "بودكاست إخباري فجر كل إثنين، يقدم لك فيه نايف العصيمي وعمر العمران تحليلات عميقة ومبسّطة للأخبار التي تهمك، وتأثيرها فيك وفي العالم.",
+    "coverImage": "assets/images/thaqal/thaqal.png",
+    "category": "news",
+    "followersCount": 130000,
+    "rating": 4.6,
+    "episodesCount": 75
+  },
+  {
+    "id": 6,
+    "title": "جناية",
+    "description": "بودكاست بطابع تشويقي ونفسي، يتتبع خيوط الجرائم ويحللها، فيأخذ المستمع إلى وجهات عديدة من الإثارة والتفكير والتأمل في خبايا القصص الواقعية.",
+    "coverImage": "assets/images/jenayah/jenayah.jpeg",
+    "category": "crime",
+    "followersCount": 300000,
+    "rating": 4.8,
+    "episodesCount": 95
   }
 ]

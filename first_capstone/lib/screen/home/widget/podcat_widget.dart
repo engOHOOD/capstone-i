@@ -18,12 +18,10 @@ class PodcatWidget extends StatelessWidget {
         itemCount: podcasts.length,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            print("here2");
             context.push(
               '${RouteKeys.home}/${RouteKeys.podcast}',
               extra: podcasts[index].id,
             );
-            print("here");
           },
           child: AnyImageView(
             imagePath: podcasts[index].coverImage,

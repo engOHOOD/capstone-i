@@ -32,9 +32,7 @@ class PodcastRepo {
     final PodacastModel onePodcast = _podcasts.firstWhere(
       (pod) => pod.id == id,
     );
-    print("---------------------1");
 
-    print(onePodcast);
     return onePodcast;
   }
 
@@ -42,16 +40,12 @@ class PodcastRepo {
     final List<EpsiodeModel> epsiodes = _epsiodes
         .where((ep) => ep.podcastId == podcastId)
         .toList();
-    print("---------------------1");
 
-    print(epsiodes);
     return epsiodes;
   }
 
   EpsiodeModel loadOneEpsiode(int id) {
     final EpsiodeModel epsiode = _epsiodes.firstWhere((ep) => ep.id == id);
-    print("---------------------1");
-    print(epsiode);
 
     return epsiode;
   }

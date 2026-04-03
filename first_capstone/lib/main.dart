@@ -1,11 +1,9 @@
+import 'package:first_capstone/core/config/get_it.dart';
 import 'package:first_capstone/core/navigation/route_app.dart';
 import 'package:first_capstone/core/theme/bloc/theme_bloc.dart';
 import 'package:first_capstone/core/theme/dark_theme.dart';
-import 'package:first_capstone/core/theme/light_theme.dart';
-import 'package:first_capstone/core/repo/podcast_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
@@ -44,6 +42,3 @@ class MainApp extends StatelessWidget {
   }
 }
 
-Future<void> configureDependencies() async {
-  GetIt.I.registerSingleton<PodcastRepo>(PodcastRepo());
-}
