@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:first_capstone/core/repo/podcast_repo.dart';
+import 'package:first_capstone/model/epsiode_model/epsiode_model.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:meta/meta.dart';
@@ -9,7 +11,8 @@ class EpsiodeCubit extends Cubit<EpsiodeState> {
   AudioPlayer epsiodePlayer = AudioPlayer();
   Duration epsiodeDuration = Duration.zero;
   Duration epsiodePosition = Duration.zero;
-  EpsiodeCubit() : super(EpsiodeInitial()) {
+  final PodcastRepo podcastRepo;
+  EpsiodeCubit({required this.podcastRepo}) : super(EpsiodeInitial()) {
     print("heref");
     epsiodePlayer.positionStream.listen((position) {
       epsiodePosition = position;
@@ -31,10 +34,11 @@ class EpsiodeCubit extends Cubit<EpsiodeState> {
     print("2");
   }
 
-  Future<void> loadEpsiode() async {
+  Future<void> loadEpsiode(int id) async {
+    final EpsiodeModel episode;
     try {
-      await epsiodePlayer.setAsset(
-"assets/podcasts/swalif/YTDown.com_Shorts_How-much-a-UI-UX-Designer-Makes-UI-UX-De_Media_NWylkHRzqHA_008_128k.mp3"      );
+      episode = podcastRepo.loadOneEpsiode(id);
+      await epsiodePlayer.setAsset(episode.audioUrl);
       emit(EpsiodePlayerLoaded());
       print("i3");
     } catch (_) {
@@ -50,7 +54,7 @@ class EpsiodeCubit extends Cubit<EpsiodeState> {
 
   @override
   Future<void> close() async {
-            print("i5");
+    print("i5");
 
     await epsiodePlayer.dispose();
     return super.close();

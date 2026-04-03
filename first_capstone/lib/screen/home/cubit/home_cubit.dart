@@ -19,6 +19,8 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> showEpsiodes() async {
     List<EpsiodeModel> epsiodes = await podcastRepo.loadEpsiodes();
-    emit(LoadedEpsiodes(epsiodes: epsiodes));
+    epsiodes.sort((a, b) => b.publishDate.compareTo(a.publishDate));
+    List<EpsiodeModel> topTen = epsiodes.take(10).toList();
+    emit(LoadedEpsiodes(epsiodes: topTen));
   }
 }

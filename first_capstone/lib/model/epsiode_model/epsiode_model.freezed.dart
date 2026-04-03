@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$EpsiodeModel {
 
- int get id; int get podcastId; String get title; String get description; String get coverImage; String get audioUrl; String get publishDate; int get plays; int get likes; int get comments;
+ int get id; int get podcastId; String get title; String get description; String get coverImage; String get audioUrl; DateTime get publishDate; int get plays; int get likes; int get comments;
 /// Create a copy of EpsiodeModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $EpsiodeModelCopyWith<$Res>  {
   factory $EpsiodeModelCopyWith(EpsiodeModel value, $Res Function(EpsiodeModel) _then) = _$EpsiodeModelCopyWithImpl;
 @useResult
 $Res call({
- int id, int podcastId, String title, String description, String coverImage, String audioUrl, String publishDate, int plays, int likes, int comments
+ int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes, int comments
 });
 
 
@@ -74,7 +74,7 @@ as String,description: null == description ? _self.description : description // 
 as String,coverImage: null == coverImage ? _self.coverImage : coverImage // ignore: cast_nullable_to_non_nullable
 as String,audioUrl: null == audioUrl ? _self.audioUrl : audioUrl // ignore: cast_nullable_to_non_nullable
 as String,publishDate: null == publishDate ? _self.publishDate : publishDate // ignore: cast_nullable_to_non_nullable
-as String,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
+as DateTime,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
 as int,likes: null == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
 as int,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as int,
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  String publishDate,  int plays,  int likes,  int comments)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _EpsiodeModel() when $default != null:
 return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
@@ -183,7 +183,7 @@ return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.cov
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  String publishDate,  int plays,  int likes,  int comments)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)  $default,) {final _that = this;
 switch (_that) {
 case _EpsiodeModel():
 return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.cov
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  String publishDate,  int plays,  int likes,  int comments)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)?  $default,) {final _that = this;
 switch (_that) {
 case _EpsiodeModel() when $default != null:
 return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
@@ -227,7 +227,7 @@ class _EpsiodeModel implements EpsiodeModel {
 @override final  String description;
 @override final  String coverImage;
 @override final  String audioUrl;
-@override final  String publishDate;
+@override final  DateTime publishDate;
 @override final  int plays;
 @override final  int likes;
 @override final  int comments;
@@ -265,7 +265,7 @@ abstract mixin class _$EpsiodeModelCopyWith<$Res> implements $EpsiodeModelCopyWi
   factory _$EpsiodeModelCopyWith(_EpsiodeModel value, $Res Function(_EpsiodeModel) _then) = __$EpsiodeModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, int podcastId, String title, String description, String coverImage, String audioUrl, String publishDate, int plays, int likes, int comments
+ int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes, int comments
 });
 
 
@@ -291,7 +291,7 @@ as String,description: null == description ? _self.description : description // 
 as String,coverImage: null == coverImage ? _self.coverImage : coverImage // ignore: cast_nullable_to_non_nullable
 as String,audioUrl: null == audioUrl ? _self.audioUrl : audioUrl // ignore: cast_nullable_to_non_nullable
 as String,publishDate: null == publishDate ? _self.publishDate : publishDate // ignore: cast_nullable_to_non_nullable
-as String,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
+as DateTime,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
 as int,likes: null == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
 as int,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as int,

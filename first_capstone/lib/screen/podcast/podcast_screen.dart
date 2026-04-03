@@ -31,25 +31,26 @@ class PodcastScreen extends StatelessWidget {
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcast) {
-                  print('JJJJJJJ');
 
                   return SliverMainAxisGroup(
                     slivers: [
                       SliverAppBar(
-                        actions: [
-                          IconButton(
-                            icon: Icon(Icons.arrow_forward_ios),
-                            onPressed: () {
-                              context.pop();
-                            },
-                          ),
-                        ],
-                        automaticallyImplyLeading: false,
+                        leading: IconButton(
+                          icon: Icon(Icons.arrow_back_ios),
+                          onPressed: () {
+                            context.pop();
+                          },
+                        ),
+
                         floating: true,
+                        pinned: true,
                         expandedHeight: 300,
                         flexibleSpace: FlexibleSpaceBar(
                           centerTitle: false,
-                          title: Text(state.podcast.title,style: Theme.of(context).textTheme.titleMedium,),
+                          title: Text(
+                            state.podcast.title,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
                           background: AnyImageView(
                             imagePath: state.podcast.coverImage,
                             height: 180,
@@ -64,8 +65,12 @@ class PodcastScreen extends StatelessWidget {
                       ),
 
                       SliverToBoxAdapter(
-                        child: Center(child: Text(state.podcast.description,style: Theme.of(context).textTheme.titleSmall,),),
-                      
+                        child: Center(
+                          child: Text(
+                            state.podcast.description,
+                            style: Theme.of(context).textTheme.titleSmall,
+                          ),
+                        ),
                       ),
                     ],
                   );
@@ -77,26 +82,21 @@ class PodcastScreen extends StatelessWidget {
             BlocBuilder<PodcastCubit, PodcastState>(
               buildWhen: (previous, current) {
                 if (current is LoadedPodcast) {
-                  print('case 1');
 
                   return true;
                 }
                 if (current is LoadedPodcastEpsiodes) {
-                  print('case 2');
                   return true;
                 } else {
-                  print('case 2');
 
                   return false;
                 }
               },
               builder: (context, state) {
                 if (state is PodcastInitial) {
-                  print('case 2vvvvv');
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcastEpsiodes) {
-                  print('11111111111');
                   return SliverList.builder(
                     itemCount: state.epsiodes.length,
                     itemBuilder: (context, index) => ListTile(

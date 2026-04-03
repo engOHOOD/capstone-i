@@ -15,7 +15,7 @@ abstract class EpsiodeModel with _$EpsiodeModel {
     required String description,
     required String coverImage,
     required String audioUrl,
-    required String publishDate,
+    required DateTime publishDate,
     required int plays,
     required int likes,
     required int comments,

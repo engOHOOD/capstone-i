@@ -120,7 +120,11 @@ class HomeScreen extends StatelessWidget {
                                   'رؤية المزيد',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.push(
+                                    '${RouteKeys.home}/${RouteKeys.allEpisode}',
+                                  );
+                                },
                               ),
                             ],
                           ),

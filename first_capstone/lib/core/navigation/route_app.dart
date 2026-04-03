@@ -1,4 +1,6 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
+import 'package:first_capstone/screen/all_epsoides/all_episodes_screen.dart';
+import 'package:first_capstone/screen/all_epsoides/cubit/all_episodes_cubit.dart';
 import 'package:first_capstone/screen/bottom_navigation/bottom_navigation_screen.dart';
 import 'package:first_capstone/screen/epsiode/cubit/epsiode_cubit.dart';
 import 'package:first_capstone/screen/epsiode/epsiode_screen.dart';
@@ -8,8 +10,8 @@ import 'package:first_capstone/screen/library/bloc/library_bloc.dart';
 import 'package:first_capstone/screen/library/library_screen.dart';
 import 'package:first_capstone/screen/podcast/cubit/podcast_cubit.dart';
 import 'package:first_capstone/screen/podcast/podcast_screen.dart';
-import 'package:first_capstone/screen/podcasts/all_podcasts_screen.dart';
-import 'package:first_capstone/screen/podcasts/cubit/all_podcasts_cubit.dart';
+import 'package:first_capstone/screen/all_podcasts/all_podcasts_screen.dart';
+import 'package:first_capstone/screen/all_podcasts/cubit/all_podcasts_cubit.dart';
 import 'package:first_capstone/screen/profile/bloc/profile_bloc.dart';
 import 'package:first_capstone/screen/profile/profile_screen.dart';
 import 'package:get_it/get_it.dart';
@@ -48,13 +50,24 @@ class RouteApp {
                       );
                     },
                   ),
-                   GoRoute(
+                  GoRoute(
                     path: RouteKeys.allPodcasts,
                     builder: (context, state) {
                       return BlocProvider(
                         create: (context) =>
                             AllPodcastsCubit(podcastRepo: GetIt.I.get()),
                         child: AllPodcastsScreen(),
+                      );
+                    },
+                  ),
+
+                  GoRoute(
+                    path: RouteKeys.allEpisode,
+                    builder: (context, state) {
+                      return BlocProvider(
+                        create: (context) =>
+                            AllEpisodesCubit(podcastRepo: GetIt.I.get()),
+                        child: AllEpisodesScreen(),
                       );
                     },
                   ),
@@ -69,7 +82,7 @@ class RouteApp {
                 builder: (context, state) {
                   print("here");
                   return BlocProvider(
-                    create: (context) => EpsiodeCubit()..loadEpsiode(),
+                    create: (context) => EpsiodeCubit(podcastRepo: GetIt.I.get()),
                     child: EpsiodeScreen(),
                   );
                 },
