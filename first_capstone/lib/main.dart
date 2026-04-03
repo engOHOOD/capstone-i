@@ -1,20 +1,16 @@
-import 'package:first_capstone/core/config/get_it.dart';
+import 'package:first_capstone/core/config/service_locator.dart';
 import 'package:first_capstone/core/navigation/route_app.dart';
 import 'package:first_capstone/core/theme/bloc/theme_bloc.dart';
 import 'package:first_capstone/core/theme/dark_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await configureDependencies();
-  runApp(
-    BlocProvider(
-      create: (context) => ThemeBloc()..add(InitialThemeEvent()),
-      child: MainApp(),
-    ),
-  );
+  await ServiceLocator.configureDependencies();
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -22,23 +18,29 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeBloc, ThemeMode>(
-      builder: (context, state) {
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          locale: const Locale('ar'),
-          supportedLocales: const [Locale('ar')],
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          theme: DarkTheme.darkTheme,
-          themeMode: ThemeMode.light,
-          routerConfig: RouteApp.router,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return BlocProvider(
+          create: (context) => ThemeBloc()..add(InitialThemeEvent()),
+          child: BlocBuilder<ThemeBloc, ThemeMode>(
+            builder: (context, state) {
+              return MaterialApp.router(
+                debugShowCheckedModeBanner: false,
+                locale: const Locale('ar'),
+                supportedLocales: const [Locale('ar')],
+                localizationsDelegates: const [
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                theme: DarkTheme.darkTheme,
+                themeMode: ThemeMode.light,
+                routerConfig: RouteApp.router,
+              );
+            },
+          ),
         );
       },
     );
   }
 }
-

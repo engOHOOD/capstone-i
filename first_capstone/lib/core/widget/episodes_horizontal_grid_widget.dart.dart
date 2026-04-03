@@ -23,7 +23,7 @@ class EpisodesHorizontalGridWidget extends StatelessWidget {
         itemBuilder: (context, index) => SizedBox(
           child: ListTile(
 
-            title: Text(podcasts[index].title,style: Theme.of(context).textTheme.titleSmall,),
+            title: Text(podcasts[index].title,style: Theme.of(context).textTheme.bodyLarge,),
             leading: AnyImageView(
               imagePath: podcasts[index].coverImage,
               fit: .fitHeight,

@@ -12,10 +12,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> showPodcasts() async {
     List<PodacastModel> podcats = await podcastRepo.loadPodcasts();
-    podcats.sort((a, b) => a.rating.compareTo(b.rating));
+    podcats.sort((a, b) => b.rating.compareTo(a.rating));
     List<PodacastModel> topFive = podcats.take(5).toList();
-
-    emit(LoadedPodcasts(podcasts: podcats));
+    emit(LoadedPodcasts(podcasts: topFive));
   }
 
   Future<void> showEpsiodes() async {

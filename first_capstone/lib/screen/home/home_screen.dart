@@ -1,9 +1,12 @@
+import 'package:first_capstone/core/navigation/route_app.dart';
+import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/widget/episodes_horizontal_grid_widget.dart.dart';
 import 'package:first_capstone/screen/home/widget/podcat_widget.dart';
 import 'package:first_capstone/screen/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,9 +26,12 @@ class HomeScreen extends StatelessWidget {
                 automaticallyImplyLeading: false,
                 floating: true,
                 expandedHeight: 70,
-                flexibleSpace:  FlexibleSpaceBar(
+                flexibleSpace: FlexibleSpaceBar(
                   centerTitle: false,
-                  title: Text('اهلا عهود',style: Theme.of(context).textTheme.titleLarge,),
+                  title: Text(
+                    'اهلا عهود',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
               ),
               SliverToBoxAdapter(
@@ -36,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverGap(20),
+              SliverGap(18),
               SliverToBoxAdapter(
                 child: BlocBuilder<HomeCubit, HomeState>(
                   buildWhen: (previous, current) {
@@ -53,9 +59,25 @@ class HomeScreen extends StatelessWidget {
                     if (state is LoadedPodcasts) {
                       return Column(
                         children: [
-                          Align(
-                            alignment: .centerStart,
-                            child: Text("برامج رائجة"),
+                          Row(
+                            mainAxisAlignment: .spaceBetween,
+                            children: [
+                              Text(
+                                "برامج رائجة",
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
+                              TextButton(
+                                child: Text(
+                                  'رؤية المزيد',
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
+                                onPressed: () {
+                                  context.push(
+                                    "${RouteKeys.home}/${RouteKeys.allPodcasts}",
+                                  );
+                                },
+                              ),
+                            ],
                           ),
                           Gap(20),
 
@@ -67,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SliverGap(20),
+              SliverGap(18),
 
               SliverToBoxAdapter(
                 child: BlocBuilder<HomeCubit, HomeState>(
@@ -87,9 +109,21 @@ class HomeScreen extends StatelessWidget {
                     if (state is LoadedEpsiodes) {
                       return Column(
                         children: [
-                          Align(
-                            alignment: .centerStart,
-                            child: Text("حلقات جديدة"),
+                          Row(
+                            mainAxisAlignment: .spaceBetween,
+                            children: [
+                              Text(
+                                "حلقات جديدة",
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
+                              TextButton(
+                                child: Text(
+                                  'رؤية المزيد',
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
                           ),
                           Gap(20),
 

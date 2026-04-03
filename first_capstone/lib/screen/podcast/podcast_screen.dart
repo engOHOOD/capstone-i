@@ -3,6 +3,7 @@ import 'package:first_capstone/core/widget/image_widget.dart';
 import 'package:first_capstone/screen/podcast/cubit/podcast_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 class PodcastScreen extends StatelessWidget {
@@ -18,8 +19,7 @@ class PodcastScreen extends StatelessWidget {
           slivers: [
             BlocBuilder<PodcastCubit, PodcastState>(
               buildWhen: (previous, current) {
-                if (current is LoadedPodcast ) {
-
+                if (current is LoadedPodcast) {
                   return true;
                 }
 
@@ -27,7 +27,6 @@ class PodcastScreen extends StatelessWidget {
               },
 
               builder: (context, state) {
-
                 if (state is PodcastInitial) {
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
@@ -50,7 +49,7 @@ class PodcastScreen extends StatelessWidget {
                         expandedHeight: 300,
                         flexibleSpace: FlexibleSpaceBar(
                           centerTitle: false,
-                          title: Text(state.podcast.title),
+                          title: Text(state.podcast.title,style: Theme.of(context).textTheme.titleMedium,),
                           background: AnyImageView(
                             imagePath: state.podcast.coverImage,
                             height: 180,
@@ -65,10 +64,8 @@ class PodcastScreen extends StatelessWidget {
                       ),
 
                       SliverToBoxAdapter(
-                        child: SizedBox(
-                          height: 20,
-                          child: Center(child: Text(state.podcast.description)),
-                        ),
+                        child: Center(child: Text(state.podcast.description,style: Theme.of(context).textTheme.titleSmall,),),
+                      
                       ),
                     ],
                   );
@@ -76,7 +73,7 @@ class PodcastScreen extends StatelessWidget {
                 return SliverToBoxAdapter(child: SizedBox.shrink());
               },
             ),
-
+            SliverGap(15),
             BlocBuilder<PodcastCubit, PodcastState>(
               buildWhen: (previous, current) {
                 if (current is LoadedPodcast) {
@@ -102,8 +99,20 @@ class PodcastScreen extends StatelessWidget {
                   print('11111111111');
                   return SliverList.builder(
                     itemCount: state.epsiodes.length,
-                    itemBuilder: (context, index) =>
-                        ListTile(leading:ImageWidget(imagePath: state.epsiodes[index].coverImage) ,title: Text(state.epsiodes[index].title)),
+                    itemBuilder: (context, index) => ListTile(
+                      leading: ImageWidget(
+                        imagePath: state.epsiodes[index].coverImage,
+                        imageWidth: 40,
+                        imageHight: 40,
+                        imageBorderRedius: 10,
+                        imagePadding: 2,
+                      ),
+
+                      title: Text(
+                        state.epsiodes[index].title,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ),
                   );
                 }
                 return SliverToBoxAdapter(child: SizedBox.shrink());

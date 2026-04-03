@@ -15,7 +15,7 @@ class EpsiodeHorizintalListWidget extends StatelessWidget {
         shrinkWrap: true,
         itemCount: podcasts.length,
         itemBuilder: (context, index) =>
-            ImageWidget(imagePath: podcasts[index].coverImage),
+            ImageWidget(imagePath: podcasts[index].coverImage,imageWidth: 50,imageHight: 50,imageBorderRedius: 10,imagePadding: 5,),
       ),
     );
   }

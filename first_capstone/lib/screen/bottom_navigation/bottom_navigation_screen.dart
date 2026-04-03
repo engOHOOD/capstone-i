@@ -15,7 +15,7 @@ class BottomNavigationScreen extends StatelessWidget {
         currentIndex: navigationShell.currentIndex,
 
         onTap: (index) {
-          navigationShell.goBranch(index, );
+          navigationShell.goBranch(index, initialLocation:true,);
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
