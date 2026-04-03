@@ -1,4 +1,3 @@
-import 'package:first_capstone/core/navigation/route_app.dart';
 import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/widget/episodes_horizontal_grid_widget.dart.dart';
 import 'package:first_capstone/screen/home/widget/podcat_widget.dart';
