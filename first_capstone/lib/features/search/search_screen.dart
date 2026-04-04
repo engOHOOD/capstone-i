@@ -1,47 +1,23 @@
-import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/widget/episodes_horizontal_grid_widget.dart.dart';
-import 'package:first_capstone/screen/home/widget/podcat_widget.dart';
-import 'package:first_capstone/screen/home/cubit/home_cubit.dart';
+import 'package:first_capstone/features/home/widget/podcat_widget.dart';
+import 'package:first_capstone/features/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     context.read<HomeCubit>().showPodcasts();
     context.read<HomeCubit>().showEpsiodes();
 
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: CustomScrollView(
             slivers: [
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                floating: true,
-                expandedHeight: 70,
-                flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: false,
-                  title: Text(
-                    'اهلا عهود',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: Center(
-                  child: Text(
-                    'افضل البرامج تنتظرك هنا',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ),
-              ),
-              SliverGap(18),
               SliverToBoxAdapter(
                 child: BlocBuilder<HomeCubit, HomeState>(
                   buildWhen: (previous, current) {
@@ -70,11 +46,7 @@ class HomeScreen extends StatelessWidget {
                                   'رؤية المزيد',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
-                                onPressed: () {
-                                  context.push(
-                                    "${RouteKeys.home}/${RouteKeys.allPodcasts}",
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -115,16 +87,12 @@ class HomeScreen extends StatelessWidget {
                                 "حلقات جديدة",
                                 style: Theme.of(context).textTheme.titleMedium,
                               ),
-                              TextButton(
+                                TextButton(
                                 child: Text(
                                   'رؤية المزيد',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
-                                onPressed: () {
-                                  context.push(
-                                    '${RouteKeys.home}/${RouteKeys.allEpisode}',
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -143,7 +111,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

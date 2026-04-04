@@ -1,5 +1,5 @@
 import 'package:first_capstone/core/extention.dart';
-import 'package:first_capstone/screen/epsiode/widget/cubit/episode_player_cubit.dart';
+import 'package:first_capstone/features/epsiode/episode_player/cubit/episode_player_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';

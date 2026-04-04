@@ -1,6 +1,6 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/widget/image_widget.dart';
-import 'package:first_capstone/screen/all_podcasts/cubit/all_podcasts_cubit.dart';
+import 'package:first_capstone/features/all_podcasts/cubit/all_podcasts_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

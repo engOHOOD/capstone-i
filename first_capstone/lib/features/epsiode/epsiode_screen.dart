@@ -1,7 +1,7 @@
 import 'package:first_capstone/core/widget/image_widget.dart';
-import 'package:first_capstone/screen/epsiode/cubit/epsiode_cubit.dart';
-import 'package:first_capstone/screen/epsiode/widget/cubit/episode_player_cubit.dart';
-import 'package:first_capstone/screen/epsiode/widget/episode_player.dart';
+import 'package:first_capstone/features/epsiode/cubit/epsiode_cubit.dart';
+import 'package:first_capstone/features/epsiode/episode_player/cubit/episode_player_cubit.dart';
+import 'package:first_capstone/features/epsiode/episode_player/episode_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';

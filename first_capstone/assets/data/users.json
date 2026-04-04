@@ -1,11 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Ahmad Al-Fulan",
-        "email": "ahmad@example.com",
-        "phone": "+966501234001",
+        "email": "ahmed@example.com",
+        "name": "أحمد آل سعود",
         "age": 28,
+        "password": "hashed_password_1",
         "followedPodcasts": [
+            1,
+            2,
+            5
+        ],
+        "likes": [
             101,
             102,
             103
@@ -13,48 +18,50 @@
     },
     {
         "id": 2,
-        "name": "Sara Al-Mutairi",
-        "email": "sara@example.com",
-        "phone": "+966509876002",
-        "age": 24,
+        "email": "fatimah@example.com",
+        "name": "فاطمة الحربي",
+        "age": 32,
+        "password": "hashed_password_2",
         "followedPodcasts": [
-            1,
-            2
+            3,
+            4
+        ],
+        "likes": [
+            101,
+            105
         ]
     },
     {
         "id": 3,
-        "name": "Fahad Al-Saeed",
-        "email": "fahad@example.com",
-        "phone": "+966501234003",
-        "age": 30,
+        "email": "nasser@example.com",
+        "name": "ناصر الراشد",
+        "age": 24,
+        "password": "hashed_password_3",
         "followedPodcasts": [
-            1,
             2,
-            3
+            3,
+            4,
+            5
+        ],
+        "likes": [
+            102,
+            104,
+            106
         ]
     },
     {
         "id": 4,
-        "name": "Layla Al-Harbi",
         "email": "layla@example.com",
-        "phone": "+966509876004",
-        "age": 22,
+        "name": "ليلى الفهد",
+        "age": 29,
+        "password": "hashed_password_4",
         "followedPodcasts": [
             1,
-            2
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Omar Al-Fahad",
-        "email": "omar@example.com",
-        "phone": "+966501234005",
-        "age": 35,
-        "followedPodcasts": [
-            1,
-            2,
-            3
+            5
+        ],
+        "likes": [
+            103,
+            107
         ]
     }
 ]

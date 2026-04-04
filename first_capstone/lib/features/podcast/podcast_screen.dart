@@ -1,6 +1,6 @@
 import 'package:any_image_view/any_image_view.dart';
 import 'package:first_capstone/core/widget/image_widget.dart';
-import 'package:first_capstone/screen/podcast/cubit/podcast_cubit.dart';
+import 'package:first_capstone/features/podcast/cubit/podcast_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
