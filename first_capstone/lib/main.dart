@@ -2,6 +2,7 @@ import 'package:first_capstone/core/config/service_locator.dart';
 import 'package:first_capstone/core/navigation/route_app.dart';
 import 'package:first_capstone/core/theme/bloc/theme_bloc.dart';
 import 'package:first_capstone/core/theme/dark_theme.dart';
+import 'package:first_capstone/core/theme/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -33,8 +34,9 @@ class MainApp extends StatelessWidget {
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
-                theme: DarkTheme.darkTheme,
-                themeMode: ThemeMode.light,
+                theme:DarkTheme.darkTheme,
+                darkTheme: DarkTheme.darkTheme,
+                themeMode:ThemeMode.system,
                 routerConfig: RouteApp.router,
               );
             },

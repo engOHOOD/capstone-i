@@ -8,6 +8,8 @@ import 'package:first_capstone/features/home/cubit/home_cubit.dart';
 import 'package:first_capstone/features/home/home_screen.dart';
 import 'package:first_capstone/features/library/bloc/library_bloc.dart';
 import 'package:first_capstone/features/library/library_screen.dart';
+import 'package:first_capstone/features/login/cubit/login_cubit.dart';
+import 'package:first_capstone/features/login/login_screen.dart';
 import 'package:first_capstone/features/podcast/cubit/podcast_cubit.dart';
 import 'package:first_capstone/features/podcast/podcast_screen.dart';
 import 'package:first_capstone/features/all_podcasts/all_podcasts_screen.dart';
@@ -21,8 +23,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class RouteApp {
   RouteApp._();
   static final router = GoRouter(
-    initialLocation: RouteKeys.home,
+    initialLocation: RouteKeys.login,
     routes: [
+      GoRoute(
+        path: RouteKeys.login,
+        builder: (context, state) {
+          return BlocProvider(
+            create: (context) => LoginCubit(authRepo: GetIt.I.get()),
+            child: LoginScreen(),
+          );
+        },
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             BottomNavigationScreen(navigationShell: navigationShell),
@@ -78,8 +89,11 @@ class RouteApp {
                       final podcastId = state.extra as int;
 
                       return BlocProvider(
-                        create: (context) =>
-                            EpsiodeCubit(podcastRepo: GetIt.I.get(), id: id,podcastId: podcastId),
+                        create: (context) => EpsiodeCubit(
+                          podcastRepo: GetIt.I.get(),
+                          id: id,
+                          podcastId: podcastId,
+                        ),
                         child: EpsiodeScreen(),
                       );
                     },
@@ -96,8 +110,11 @@ class RouteApp {
                   print("here");
 
                   return BlocProvider(
-                    create: (context) =>
-                        EpsiodeCubit(podcastRepo: GetIt.I.get(), id: 1, podcastId: 1),
+                    create: (context) => EpsiodeCubit(
+                      podcastRepo: GetIt.I.get(),
+                      id: 1,
+                      podcastId: 1,
+                    ),
                     child: EpsiodeScreen(),
                   );
                 },
