@@ -41,8 +41,7 @@ flutter:
    - assets/images/swalif/
    - assets/images/thaqal/
    - assets/images/alfajr/
-   - assets/podcasts/swalif/
-
+   - assets/podcasts/naif_hamdan_epsiodes/
    - assets/data/
   fonts:
     - family: Handicrafts

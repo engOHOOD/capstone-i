@@ -71,6 +71,19 @@ class RouteApp {
                       );
                     },
                   ),
+                  GoRoute(
+                    path: RouteKeys.episode,
+                    builder: (context, state) {
+                      final id = state.extra as int;
+                      final podcastId = state.extra as int;
+
+                      return BlocProvider(
+                        create: (context) =>
+                            EpsiodeCubit(podcastRepo: GetIt.I.get(), id: id,podcastId: podcastId),
+                        child: EpsiodeScreen(),
+                      );
+                    },
+                  ),
                 ],
               ),
             ],
@@ -81,8 +94,10 @@ class RouteApp {
                 path: RouteKeys.search,
                 builder: (context, state) {
                   print("here");
+
                   return BlocProvider(
-                    create: (context) => EpsiodeCubit(podcastRepo: GetIt.I.get()),
+                    create: (context) =>
+                        EpsiodeCubit(podcastRepo: GetIt.I.get(), id: 1, podcastId: 1),
                     child: EpsiodeScreen(),
                   );
                 },

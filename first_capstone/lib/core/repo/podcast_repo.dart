@@ -44,8 +44,15 @@ class PodcastRepo {
     return epsiodes;
   }
 
-  EpsiodeModel loadOneEpsiode(int id) {
-    final EpsiodeModel epsiode = _epsiodes.firstWhere((ep) => ep.id == id);
+  EpsiodeModel loadOneEpsiode(int id,int parnetId) {
+    print("dceced33333cdccdc");
+
+    final EpsiodeModel epsiode = _epsiodes.firstWhere((ep) =>ep.podcastId==parnetId&& ep.id == id,orElse: () {
+      throw Exception("Episode not found with id = $id");
+    },
+  );;
+    print("dce22222cedcdccdc");
+    print(epsiode);
 
     return epsiode;
   }
