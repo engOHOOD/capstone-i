@@ -13,18 +13,14 @@ class PodcastCubit extends Cubit<PodcastState> {
     : super(PodcastInitial());
 
   void getPodcast() async {
-    print("cubit 1");
     emit(LoadedPodcast(podcast: podcastRepo.loadOnePodcast(id)));
     await Future.delayed(Duration.zero);
     getPodcastEpsiodes();
-    print("cubit 1.1");
   }
 
   void getPodcastEpsiodes() {
-    print("cubit 2");
     emit(
       LoadedPodcastEpsiodes(epsiodes: podcastRepo.loadPodcastEpsiodes(id)),
     );
-    print("cubit 2.2");
   }
 }

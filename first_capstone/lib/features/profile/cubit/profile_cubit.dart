@@ -8,17 +8,14 @@ part 'profile_state.dart';
 class ProfileCubit extends Cubit<ProfileState> {
   final UsersRepo usersRepo;
   ProfileCubit({required this.usersRepo}) : super(ProfileInitial()){
-    
+
     getUserInfo();}
 
   Future<void> getUserInfo() async {
-    print("hi");
-        print( usersRepo.getCurrentUser);
 
     emit(ProfileInfoLoaded(user: usersRepo.getCurrentUser));
         await Future.delayed(Duration.zero);
 
-        print("hi");
 
   }
 }

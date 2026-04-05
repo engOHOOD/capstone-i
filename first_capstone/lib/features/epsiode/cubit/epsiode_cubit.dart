@@ -15,10 +15,8 @@ class EpsiodeCubit extends Cubit<EpsiodeState> {
 
 
     void getEpisode() async {
-    print("cubit 1");
     emit(EpsiodeLoaded(episode: podcastRepo.loadOneEpsiode(id)));
     await Future.delayed(Duration.zero);
-    print("cubit 1.1");
   }
 
   }
