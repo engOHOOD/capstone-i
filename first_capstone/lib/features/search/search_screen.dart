@@ -21,10 +21,8 @@ class SearchScreen extends HookWidget {
             hintText: "بحث",
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
           ),
-          onTap: () {
-            // Search triggered when user taps the field
+          onChanged: (value) {
             context.read<SearchCubit>().search(searchController.text);
-            print("Search triggered on tap: ${searchController.text}");
           },
           onTapOutside: (value) {
             FocusManager.instance.primaryFocus?.unfocus();

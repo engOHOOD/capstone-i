@@ -1,5 +1,6 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/repo/authentication_repo.dart';
+import 'package:first_capstone/core/repo/podcast_repo.dart';
 import 'package:first_capstone/core/repo/user_repo.dart';
 import 'package:first_capstone/features/all_epsoides/all_episodes_screen.dart';
 import 'package:first_capstone/features/all_epsoides/cubit/all_episodes_cubit.dart';
@@ -8,7 +9,7 @@ import 'package:first_capstone/features/epsiode/cubit/epsiode_cubit.dart';
 import 'package:first_capstone/features/epsiode/epsiode_screen.dart';
 import 'package:first_capstone/features/home/cubit/home_cubit.dart';
 import 'package:first_capstone/features/home/home_screen.dart';
-import 'package:first_capstone/features/library/bloc/library_bloc.dart';
+import 'package:first_capstone/features/library/cubit/library_cubit.dart';
 import 'package:first_capstone/features/library/library_screen.dart';
 import 'package:first_capstone/features/login/cubit/login_cubit.dart';
 import 'package:first_capstone/features/login/login_screen.dart';
@@ -94,10 +95,8 @@ class RouteApp {
                     builder: (context, state) {
                       final id = state.extra as int;
                       return BlocProvider(
-                        create: (context) => EpsiodeCubit(
-                          podcastRepo: GetIt.I.get(),
-                          id: id,
-                        ),
+                        create: (context) =>
+                            EpsiodeCubit(podcastRepo: GetIt.I.get(), id: id),
                         child: EpsiodeScreen(),
                       );
                     },
@@ -114,9 +113,8 @@ class RouteApp {
                   print("here");
 
                   return BlocProvider(
-                    create: (context) => SearchCubit(
-                      podcastRepo: GetIt.I.get(),
-                    ),
+                    create: (context) =>
+                        SearchCubit(podcastRepo: GetIt.I.get()),
                     child: SearchScreen(),
                   );
                 },
@@ -129,7 +127,10 @@ class RouteApp {
                 path: RouteKeys.library,
                 builder: (context, state) {
                   return BlocProvider(
-                    create: (context) => LibraryBloc(),
+                    create: (context) => LibraryCubit(
+                      podcastRepo: GetIt.I.get<PodcastRepo>(),
+                      userRepo: GetIt.I.get<UsersRepo>(),
+                    ),
                     child: LibraryScreen(),
                   );
                 },
