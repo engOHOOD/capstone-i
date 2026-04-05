@@ -11,7 +11,7 @@ abstract class UserModel with _$UserModel{
   const factory UserModel({
     required int id,
     required String email,
-    required String napasswordme,
+    required String password,
     required String name,
     required int age,
     required List<int> followedPodcasts,

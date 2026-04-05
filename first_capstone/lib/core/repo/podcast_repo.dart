@@ -25,6 +25,8 @@ class PodcastRepo {
     _epsiodes = List.from(
       await jsonDecode(epsiodeJson),
     ).map((item) => EpsiodeModel.fromJson(item)).toList();
+
+    // print(_epsiodes);
     return _epsiodes;
   }
 
@@ -44,13 +46,13 @@ class PodcastRepo {
     return epsiodes;
   }
 
-  EpsiodeModel loadOneEpsiode(int id,int parnetId) {
+  EpsiodeModel loadOneEpsiode(int id,) {
     print("dceced33333cdccdc");
 
-    final EpsiodeModel epsiode = _epsiodes.firstWhere((ep) =>ep.podcastId==parnetId&& ep.id == id,orElse: () {
+    final EpsiodeModel epsiode = _epsiodes.firstWhere((ep) => ep.id == id,orElse: () {
       throw Exception("Episode not found with id = $id");
     },
-  );;
+  );
     print("dce22222cedcdccdc");
     print(epsiode);
 

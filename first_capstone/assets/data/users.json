@@ -8,12 +8,18 @@
         "followedPodcasts": [
             1,
             2,
+            3,
+            4,
             5
         ],
         "likes": [
             101,
             102,
-            103
+            103,
+            110,
+            144,
+            130,
+            120
         ]
     },
     {
@@ -21,7 +27,7 @@
         "email": "ahmed@gmail.com",
         "name": "أحمد آل سعود",
         "age": 32,
-        "password": "hashed_password_2",
+        "password": "1234567892",
         "followedPodcasts": [
             3,
             4
@@ -36,7 +42,7 @@
         "email": "nasser@gmail.com",
         "name": "ناصر الراشد",
         "age": 24,
-        "password": "hashed_password_3",
+        "password": "1234567893",
         "followedPodcasts": [
             2,
             3,
@@ -54,7 +60,7 @@
         "email": "layla@gmail.com",
         "name": "ليلى الفهد",
         "age": 29,
-        "password": "hashed_password_4",
+        "password": "1234567894",
         "followedPodcasts": [
             1,
             5

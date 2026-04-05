@@ -19,7 +19,7 @@ class BottomNavigationScreen extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.library_music_rounded), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),

@@ -9,7 +9,7 @@ class DarkTheme {
       brightness: Brightness.dark,
     ),
     textTheme: TextTheme(
-      titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+      titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600,),
       titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
       titleSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
     ),

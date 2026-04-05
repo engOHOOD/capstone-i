@@ -14,7 +14,7 @@ class LoginScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final emailController = useTextEditingController(text: "ohood@gmail.com");
-    final passwordController = useTextEditingController(text: "1234567891");
+    final passwordController = useTextEditingController(text: "123456789");
     final loadingKey = GlobalKey();
 
     return Scaffold(
@@ -43,18 +43,22 @@ class LoginScreen extends HookWidget {
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                         maxWidth: 90.sw,
-                        maxHeight: 95.sw,
+                        maxHeight: 40.sh,
                       ),
-                      child: Column(
-                        children: [
-                          Text(state.message),
-                          FilledButton(
-                            onPressed: () {
-                              context.pop();
-                            },
-                            child: Text("حسنا"),
-                          ),
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: .center,
+                          children: [
+                            Text(state.message),
+                            TextButton(
+                              onPressed: () {
+                                context.pop();
+                              },
+                              child: Text("حسنا"),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -68,6 +72,7 @@ class LoginScreen extends HookWidget {
             child: BlocBuilder<LoginCubit, LoginState>(
               builder: (context, state) {
                 return Center(
+                  
                   child: Card(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -80,8 +85,13 @@ class LoginScreen extends HookWidget {
                           mainAxisAlignment: .center,
                           children: [
                             Text(
-                              "تسجيل الدخول",
+                              "اهلا بك في سرد",
                               style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                            Gap(10),
+                              Text(
+                              "يرجى تسجيل الدخول",
+                              style: Theme.of(context).textTheme.titleSmall,
                             ),
                             Gap(30),
                             TextFormField(
