@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PodcastGrid extends StatelessWidget {
-  final List<PodacastModel> podcasts;
+  final List<PodcastModel> podcasts;
   const PodcastGrid({super.key, required this.podcasts});
 
   @override

@@ -13,42 +13,42 @@ part of 'epsiode_model.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$EpsiodeModel {
+mixin _$EpisodeModel {
 
- int get id; int get podcastId; String get title; String get description; String get coverImage; String get audioUrl; DateTime get publishDate; int get plays; int get likes; int get comments;
-/// Create a copy of EpsiodeModel
+ int get id; int get podcastId; String get title; String get description; String get coverImage; String get audioUrl; DateTime get publishDate; int get plays; int get likes;
+/// Create a copy of EpisodeModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$EpsiodeModelCopyWith<EpsiodeModel> get copyWith => _$EpsiodeModelCopyWithImpl<EpsiodeModel>(this as EpsiodeModel, _$identity);
+$EpisodeModelCopyWith<EpisodeModel> get copyWith => _$EpisodeModelCopyWithImpl<EpisodeModel>(this as EpisodeModel, _$identity);
 
-  /// Serializes this EpsiodeModel to a JSON map.
+  /// Serializes this EpisodeModel to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpsiodeModel&&(identical(other.id, id) || other.id == id)&&(identical(other.podcastId, podcastId) || other.podcastId == podcastId)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.coverImage, coverImage) || other.coverImage == coverImage)&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.publishDate, publishDate) || other.publishDate == publishDate)&&(identical(other.plays, plays) || other.plays == plays)&&(identical(other.likes, likes) || other.likes == likes)&&(identical(other.comments, comments) || other.comments == comments));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpisodeModel&&(identical(other.id, id) || other.id == id)&&(identical(other.podcastId, podcastId) || other.podcastId == podcastId)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.coverImage, coverImage) || other.coverImage == coverImage)&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.publishDate, publishDate) || other.publishDate == publishDate)&&(identical(other.plays, plays) || other.plays == plays)&&(identical(other.likes, likes) || other.likes == likes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,podcastId,title,description,coverImage,audioUrl,publishDate,plays,likes,comments);
+int get hashCode => Object.hash(runtimeType,id,podcastId,title,description,coverImage,audioUrl,publishDate,plays,likes);
 
 @override
 String toString() {
-  return 'EpsiodeModel(id: $id, podcastId: $podcastId, title: $title, description: $description, coverImage: $coverImage, audioUrl: $audioUrl, publishDate: $publishDate, plays: $plays, likes: $likes, comments: $comments)';
+  return 'EpisodeModel(id: $id, podcastId: $podcastId, title: $title, description: $description, coverImage: $coverImage, audioUrl: $audioUrl, publishDate: $publishDate, plays: $plays, likes: $likes)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $EpsiodeModelCopyWith<$Res>  {
-  factory $EpsiodeModelCopyWith(EpsiodeModel value, $Res Function(EpsiodeModel) _then) = _$EpsiodeModelCopyWithImpl;
+abstract mixin class $EpisodeModelCopyWith<$Res>  {
+  factory $EpisodeModelCopyWith(EpisodeModel value, $Res Function(EpisodeModel) _then) = _$EpisodeModelCopyWithImpl;
 @useResult
 $Res call({
- int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes, int comments
+ int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes
 });
 
 
@@ -56,16 +56,16 @@ $Res call({
 
 }
 /// @nodoc
-class _$EpsiodeModelCopyWithImpl<$Res>
-    implements $EpsiodeModelCopyWith<$Res> {
-  _$EpsiodeModelCopyWithImpl(this._self, this._then);
+class _$EpisodeModelCopyWithImpl<$Res>
+    implements $EpisodeModelCopyWith<$Res> {
+  _$EpisodeModelCopyWithImpl(this._self, this._then);
 
-  final EpsiodeModel _self;
-  final $Res Function(EpsiodeModel) _then;
+  final EpisodeModel _self;
+  final $Res Function(EpisodeModel) _then;
 
-/// Create a copy of EpsiodeModel
+/// Create a copy of EpisodeModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? podcastId = null,Object? title = null,Object? description = null,Object? coverImage = null,Object? audioUrl = null,Object? publishDate = null,Object? plays = null,Object? likes = null,Object? comments = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? podcastId = null,Object? title = null,Object? description = null,Object? coverImage = null,Object? audioUrl = null,Object? publishDate = null,Object? plays = null,Object? likes = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,podcastId: null == podcastId ? _self.podcastId : podcastId // ignore: cast_nullable_to_non_nullable
@@ -76,7 +76,6 @@ as String,audioUrl: null == audioUrl ? _self.audioUrl : audioUrl // ignore: cast
 as String,publishDate: null == publishDate ? _self.publishDate : publishDate // ignore: cast_nullable_to_non_nullable
 as DateTime,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
 as int,likes: null == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
-as int,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -84,8 +83,8 @@ as int,
 }
 
 
-/// Adds pattern-matching-related methods to [EpsiodeModel].
-extension EpsiodeModelPatterns on EpsiodeModel {
+/// Adds pattern-matching-related methods to [EpisodeModel].
+extension EpisodeModelPatterns on EpisodeModel {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -98,10 +97,10 @@ extension EpsiodeModelPatterns on EpsiodeModel {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpsiodeModel value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpisodeModel value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _EpsiodeModel() when $default != null:
+case _EpisodeModel() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -120,10 +119,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpsiodeModel value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpisodeModel value)  $default,){
 final _that = this;
 switch (_that) {
-case _EpsiodeModel():
+case _EpisodeModel():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -141,10 +140,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpsiodeModel value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpisodeModel value)?  $default,){
 final _that = this;
 switch (_that) {
-case _EpsiodeModel() when $default != null:
+case _EpisodeModel() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -162,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _EpsiodeModel() when $default != null:
-return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
+case _EpisodeModel() when $default != null:
+return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes);case _:
   return orElse();
 
 }
@@ -183,10 +182,10 @@ return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.cov
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes)  $default,) {final _that = this;
 switch (_that) {
-case _EpsiodeModel():
-return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
+case _EpisodeModel():
+return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -203,10 +202,10 @@ return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.cov
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes,  int comments)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int podcastId,  String title,  String description,  String coverImage,  String audioUrl,  DateTime publishDate,  int plays,  int likes)?  $default,) {final _that = this;
 switch (_that) {
-case _EpsiodeModel() when $default != null:
-return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes,_that.comments);case _:
+case _EpisodeModel() when $default != null:
+return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.coverImage,_that.audioUrl,_that.publishDate,_that.plays,_that.likes);case _:
   return null;
 
 }
@@ -217,9 +216,9 @@ return $default(_that.id,_that.podcastId,_that.title,_that.description,_that.cov
 /// @nodoc
 @JsonSerializable()
 
-class _EpsiodeModel implements EpsiodeModel {
-  const _EpsiodeModel({required this.id, required this.podcastId, required this.title, required this.description, required this.coverImage, required this.audioUrl, required this.publishDate, required this.plays, required this.likes, required this.comments});
-  factory _EpsiodeModel.fromJson(Map<String, dynamic> json) => _$EpsiodeModelFromJson(json);
+class _EpisodeModel implements EpisodeModel {
+  const _EpisodeModel({required this.id, required this.podcastId, required this.title, required this.description, required this.coverImage, required this.audioUrl, required this.publishDate, required this.plays, required this.likes});
+  factory _EpisodeModel.fromJson(Map<String, dynamic> json) => _$EpisodeModelFromJson(json);
 
 @override final  int id;
 @override final  int podcastId;
@@ -230,42 +229,41 @@ class _EpsiodeModel implements EpsiodeModel {
 @override final  DateTime publishDate;
 @override final  int plays;
 @override final  int likes;
-@override final  int comments;
 
-/// Create a copy of EpsiodeModel
+/// Create a copy of EpisodeModel
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$EpsiodeModelCopyWith<_EpsiodeModel> get copyWith => __$EpsiodeModelCopyWithImpl<_EpsiodeModel>(this, _$identity);
+_$EpisodeModelCopyWith<_EpisodeModel> get copyWith => __$EpisodeModelCopyWithImpl<_EpisodeModel>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$EpsiodeModelToJson(this, );
+  return _$EpisodeModelToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpsiodeModel&&(identical(other.id, id) || other.id == id)&&(identical(other.podcastId, podcastId) || other.podcastId == podcastId)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.coverImage, coverImage) || other.coverImage == coverImage)&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.publishDate, publishDate) || other.publishDate == publishDate)&&(identical(other.plays, plays) || other.plays == plays)&&(identical(other.likes, likes) || other.likes == likes)&&(identical(other.comments, comments) || other.comments == comments));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpisodeModel&&(identical(other.id, id) || other.id == id)&&(identical(other.podcastId, podcastId) || other.podcastId == podcastId)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.coverImage, coverImage) || other.coverImage == coverImage)&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.publishDate, publishDate) || other.publishDate == publishDate)&&(identical(other.plays, plays) || other.plays == plays)&&(identical(other.likes, likes) || other.likes == likes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,podcastId,title,description,coverImage,audioUrl,publishDate,plays,likes,comments);
+int get hashCode => Object.hash(runtimeType,id,podcastId,title,description,coverImage,audioUrl,publishDate,plays,likes);
 
 @override
 String toString() {
-  return 'EpsiodeModel(id: $id, podcastId: $podcastId, title: $title, description: $description, coverImage: $coverImage, audioUrl: $audioUrl, publishDate: $publishDate, plays: $plays, likes: $likes, comments: $comments)';
+  return 'EpisodeModel(id: $id, podcastId: $podcastId, title: $title, description: $description, coverImage: $coverImage, audioUrl: $audioUrl, publishDate: $publishDate, plays: $plays, likes: $likes)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$EpsiodeModelCopyWith<$Res> implements $EpsiodeModelCopyWith<$Res> {
-  factory _$EpsiodeModelCopyWith(_EpsiodeModel value, $Res Function(_EpsiodeModel) _then) = __$EpsiodeModelCopyWithImpl;
+abstract mixin class _$EpisodeModelCopyWith<$Res> implements $EpisodeModelCopyWith<$Res> {
+  factory _$EpisodeModelCopyWith(_EpisodeModel value, $Res Function(_EpisodeModel) _then) = __$EpisodeModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes, int comments
+ int id, int podcastId, String title, String description, String coverImage, String audioUrl, DateTime publishDate, int plays, int likes
 });
 
 
@@ -273,17 +271,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$EpsiodeModelCopyWithImpl<$Res>
-    implements _$EpsiodeModelCopyWith<$Res> {
-  __$EpsiodeModelCopyWithImpl(this._self, this._then);
+class __$EpisodeModelCopyWithImpl<$Res>
+    implements _$EpisodeModelCopyWith<$Res> {
+  __$EpisodeModelCopyWithImpl(this._self, this._then);
 
-  final _EpsiodeModel _self;
-  final $Res Function(_EpsiodeModel) _then;
+  final _EpisodeModel _self;
+  final $Res Function(_EpisodeModel) _then;
 
-/// Create a copy of EpsiodeModel
+/// Create a copy of EpisodeModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? podcastId = null,Object? title = null,Object? description = null,Object? coverImage = null,Object? audioUrl = null,Object? publishDate = null,Object? plays = null,Object? likes = null,Object? comments = null,}) {
-  return _then(_EpsiodeModel(
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? podcastId = null,Object? title = null,Object? description = null,Object? coverImage = null,Object? audioUrl = null,Object? publishDate = null,Object? plays = null,Object? likes = null,}) {
+  return _then(_EpisodeModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,podcastId: null == podcastId ? _self.podcastId : podcastId // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -293,7 +291,6 @@ as String,audioUrl: null == audioUrl ? _self.audioUrl : audioUrl // ignore: cast
 as String,publishDate: null == publishDate ? _self.publishDate : publishDate // ignore: cast_nullable_to_non_nullable
 as DateTime,plays: null == plays ? _self.plays : plays // ignore: cast_nullable_to_non_nullable
 as int,likes: null == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
-as int,comments: null == comments ? _self.comments : comments // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }

@@ -23,7 +23,7 @@ class PodcastCubit extends Cubit<PodcastState> {
   void getPodcastEpsiodes() {
     print("cubit 2");
     emit(
-      LoadedPodcastEpsiodes(epsiodes: podcastRepo.loadOnePodcastEpsiodes(id)),
+      LoadedPodcastEpsiodes(epsiodes: podcastRepo.loadPodcastEpsiodes(id)),
     );
     print("cubit 2.2");
   }

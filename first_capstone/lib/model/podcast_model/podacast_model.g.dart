@@ -6,18 +6,17 @@ part of 'podacast_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_PodacastModel _$PodacastModelFromJson(Map<String, dynamic> json) =>
-    _PodacastModel(
+_PodcastModel _$PodcastModelFromJson(Map<String, dynamic> json) =>
+    _PodcastModel(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       description: json['description'] as String,
       coverImage: json['coverImage'] as String,
       followersCount: (json['followersCount'] as num).toInt(),
       rating: json['rating'] as num,
-      episodesCount: (json['episodesCount'] as num).toInt(),
     );
 
-Map<String, dynamic> _$PodacastModelToJson(_PodacastModel instance) =>
+Map<String, dynamic> _$PodcastModelToJson(_PodcastModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -25,5 +24,4 @@ Map<String, dynamic> _$PodacastModelToJson(_PodacastModel instance) =>
       'coverImage': instance.coverImage,
       'followersCount': instance.followersCount,
       'rating': instance.rating,
-      'episodesCount': instance.episodesCount,
     };

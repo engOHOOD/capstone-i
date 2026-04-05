@@ -6,7 +6,7 @@ sealed class EpsiodeState {}
 final class EpsiodeInitial extends EpsiodeState {}
 
 final class EpsiodeLoaded extends EpsiodeState{
-  final EpsiodeModel episode;
+  final EpisodeModel episode;
 
   EpsiodeLoaded({required this.episode});
 }

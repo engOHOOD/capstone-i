@@ -7,6 +7,7 @@ class UsersRepo {
   List<UserModel> _users = [];
   late UserModel _currentUser;
 
+// loads all user data from json file
   Future<List<UserModel>> loadAllUsers() async {
     final usersJson = await rootBundle.loadString("assets/data/users.json");
     _users = List.from(
@@ -17,9 +18,6 @@ class UsersRepo {
     return _users;
   }
 
-  set setcurrentUser(UserModel user) {
-    _currentUser = user;
-  }
-
+// getter get current user data
   UserModel get getCurrentUser =>_currentUser;
 }

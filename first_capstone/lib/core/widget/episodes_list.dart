@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class EpisodesList extends StatelessWidget {
-  final List<EpsiodeModel> episodes;
+  final List<EpisodeModel> episodes;
   const EpisodesList({super.key, required this.episodes});
 
   @override

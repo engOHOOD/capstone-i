@@ -6,7 +6,7 @@ sealed class AllPodcastsState {}
 final class AllPodcastsInitial extends AllPodcastsState {}
 
 final class LoadedAllPodcasts extends AllPodcastsState {
-  final List<PodacastModel> podcasts;
+  final List<PodcastModel> podcasts;
 
   LoadedAllPodcasts({required this.podcasts});
 }

@@ -12,7 +12,7 @@ class LibraryScreen extends StatelessWidget {
     context.read<LibraryCubit>().showLibrary();
 
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: Text("المكتبة"),

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:first_capstone/core/widget/image_widget.dart';
 import 'package:first_capstone/features/epsiode/cubit/epsiode_cubit.dart';
 import 'package:first_capstone/features/epsiode/episode_player/cubit/episode_player_cubit.dart';
@@ -11,7 +13,6 @@ class EpsiodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("herehey");
     context.read<EpsiodeCubit>().getEpisode();
 
     return Scaffold(
@@ -20,10 +21,12 @@ class EpsiodeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: BlocBuilder<EpsiodeCubit, EpsiodeState>(
             builder: (context, state) {
+              // loading state
               if (state is EpsiodeInitial) {
-                return SizedBox.shrink();
+                return Center(child: CircularProgressIndicator(),);
               }
-              if (state is EpsiodeLoaded) {
+             // load epsiode state
+             if (state is EpsiodeLoaded) {
                 return Column(
                   children: [
                     ImageWidget(
@@ -44,8 +47,7 @@ class EpsiodeScreen extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     Gap(10),
-
-
+                    // play epsiode state
                     BlocProvider(
                       create: (context) =>
                           EpisodePlayerCubit(audioUrl: state.episode.audioUrl),

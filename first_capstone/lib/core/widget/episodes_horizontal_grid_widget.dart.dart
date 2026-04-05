@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class EpisodesHorizontalGridWidget extends StatelessWidget {
   const EpisodesHorizontalGridWidget({super.key, required this.podcasts});
-  final List<EpsiodeModel> podcasts;
+  final List<EpisodeModel> podcasts;
 
   @override
   Widget build(BuildContext context) {

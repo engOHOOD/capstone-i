@@ -1,6 +1,6 @@
 import 'package:first_capstone/core/config/service_locator.dart';
 import 'package:first_capstone/core/navigation/route_app.dart';
-import 'package:first_capstone/core/theme/bloc/theme_bloc.dart';
+import 'package:first_capstone/core/theme/cubit/theme_cubit.dart';
 import 'package:first_capstone/core/theme/dark_theme.dart';
 import 'package:first_capstone/core/theme/light_theme.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +22,8 @@ class MainApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return BlocProvider(
-          create: (context) => ThemeBloc()..add(InitialThemeEvent()),
-          child: BlocBuilder<ThemeBloc, ThemeMode>(
+          create: (context) => ThemeCubit(),
+          child: BlocBuilder<ThemeCubit, ThemeMode>(
             builder: (context, state) {
               return MaterialApp.router(
                 debugShowCheckedModeBanner: false,
@@ -34,9 +34,9 @@ class MainApp extends StatelessWidget {
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
-                theme:DarkTheme.darkTheme,
+                theme:LightTheme.lightTheme,
                 darkTheme: DarkTheme.darkTheme,
-                themeMode:ThemeMode.system,
+                themeMode:state,
                 routerConfig: RouteApp.router,
               );
             },

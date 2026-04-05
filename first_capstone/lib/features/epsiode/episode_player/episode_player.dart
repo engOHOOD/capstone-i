@@ -14,15 +14,12 @@ class EpsiodePlayer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: BlocBuilder<EpisodePlayerCubit, EpisodePlayerState>(
         builder: (context, state) {
-          print("i6");
 
           if (state is EpisodePlayerInitial) {
-            print("i7");
 
             return Center(child: CircularProgressIndicator());
           }
           if (state is EpsiodePlayerLoaded) {
-            print("i8");
 
             return Column(
               children: [
@@ -39,7 +36,6 @@ class EpsiodePlayer extends StatelessWidget {
                       .inSeconds
                       .toDouble(),
                   onChanged: (double value) {
-                    print("i9");
                   },
                   onChangeEnd: (value) =>
                       context.read<EpisodePlayerCubit>().handleSeek(value),
@@ -63,7 +59,6 @@ class EpsiodePlayer extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {
-                        print("i10");
 
                         context.read<EpisodePlayerCubit>().back10Sec();
                       },
@@ -71,7 +66,6 @@ class EpsiodePlayer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
-                        print("i10");
 
                         context.read<EpisodePlayerCubit>().playOrPause();
                       },
@@ -83,8 +77,6 @@ class EpsiodePlayer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
-                        print("i10");
-
                         context.read<EpisodePlayerCubit>().forward30Sec();
                       },
                       icon: Icon(Icons.replay_30_rounded),
@@ -94,8 +86,12 @@ class EpsiodePlayer extends StatelessWidget {
               ],
             );
           }
-          return Text("error");
-        },
+          if(state is EpsiodePlayerError){
+            return SizedBox.shrink();
+          }
+          else {
+            return SizedBox.shrink();
+        }}
       ),
     );
   }

@@ -1,10 +1,8 @@
-import 'package:any_image_view/any_image_view.dart';
-import 'package:first_capstone/core/navigation/route_keys.dart';
+
 import 'package:first_capstone/core/widget/episodes_list.dart';
 import 'package:first_capstone/features/all_epsoides/cubit/all_episodes_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class AllEpisodesScreen extends StatelessWidget {
   const AllEpisodesScreen({super.key});
@@ -21,9 +19,11 @@ class AllEpisodesScreen extends StatelessWidget {
       ),
       body: BlocBuilder<AllEpisodesCubit, AllEpisodesState>(
         builder: (context, state) {
+          // loading state
           if (state is AllEpisodesInitial) {
-            return SizedBox.shrink();
+            return Center(child: CircularProgressIndicator(),);
           }
+          // shows all episodes in ascending order by date
           if (state is LoadedAllEpisodes) {
             return EpisodesList(episodes: state.allEpisodes);
           }

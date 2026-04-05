@@ -6,20 +6,20 @@ sealed class SearchState {}
 final class SearchInitial extends SearchState {}
 
 final class SearchResult extends SearchState {
- final List<PodacastModel> podcasts;
-   final List<EpsiodeModel> epsiodes;
+ final List<PodcastModel> podcasts;
+   final List<EpisodeModel> epsiodes;
 
   SearchResult({required this.podcasts, required this.epsiodes});
 }
 
 final class LoadedPodcasts extends SearchState {
-  final List<PodacastModel> podcasts;
+  final List<PodcastModel> podcasts;
 
   LoadedPodcasts({required this.podcasts});
 }
 
 final class LoadedEpsiodes extends SearchState {
-  final List<EpsiodeModel> epsiodes;
+  final List<EpisodeModel> epsiodes;
 
   LoadedEpsiodes({required this.epsiodes});
 }

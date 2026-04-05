@@ -11,16 +11,16 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit({required this.podcastRepo}) : super(HomeInitial());
 
   Future<void> showPodcasts() async {
-    List<PodacastModel> podcats = await podcastRepo.loadPodcasts();
+    List<PodcastModel> podcats = await podcastRepo.loadPodcasts();
     podcats.sort((a, b) => b.rating.compareTo(a.rating));
-    List<PodacastModel> topFive = podcats.take(5).toList();
+    List<PodcastModel> topFive = podcats.take(5).toList();
     emit(LoadedPodcasts(podcasts: topFive));
   }
 
   Future<void> showEpsiodes() async {
-    List<EpsiodeModel> epsiodes = await podcastRepo.loadEpsiodes();
+    List<EpisodeModel> epsiodes = await podcastRepo.loadEpsiodes();
     epsiodes.sort((a, b) => b.publishDate.compareTo(a.publishDate));
-    List<EpsiodeModel> topTen = epsiodes.take(10).toList();
+    List<EpisodeModel> topTen = epsiodes.take(10).toList();
     emit(LoadedEpsiodes(epsiodes: topTen));
   }
 }

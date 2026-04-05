@@ -17,13 +17,13 @@ class LibraryCubit extends Cubit<LibraryState> {
 
   Future<void> showLibrary() async {
     UserModel currentUser = await userRepo.getCurrentUser;
-    List<PodacastModel> podcats = await podcastRepo.loadPodcasts();
-    List<EpsiodeModel> epsiodes = await podcastRepo.loadEpsiodes();
+    List<PodcastModel> podcats = await podcastRepo.loadPodcasts();
+    List<EpisodeModel> epsiodes = await podcastRepo.loadEpsiodes();
 
-    List<PodacastModel> userPodcasts = podcats
+    List<PodcastModel> userPodcasts = podcats
         .where((pod) => currentUser.followedPodcasts.contains(pod.id))
         .toList();
-    List<EpsiodeModel> userLikedEpisodes = epsiodes
+    List<EpisodeModel> userLikedEpisodes = epsiodes
         .where((ep) => currentUser.likes.contains(ep.id))
         .toList();
 

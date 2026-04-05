@@ -6,13 +6,13 @@ sealed class HomeState {}
 final class HomeInitial extends HomeState {}
 
 final class LoadedPodcasts extends HomeState {
-  final List<PodacastModel> podcasts;
+  final List<PodcastModel> podcasts;
 
   LoadedPodcasts({required this.podcasts});
 }
 
 final class LoadedEpsiodes extends HomeState {
-  final List<EpsiodeModel> epsiodes;
+  final List<EpisodeModel> epsiodes;
 
   LoadedEpsiodes({required this.epsiodes});
 }

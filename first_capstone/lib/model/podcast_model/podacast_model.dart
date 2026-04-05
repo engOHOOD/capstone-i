@@ -7,16 +7,15 @@ part 'podacast_model.freezed.dart';
 part 'podacast_model.g.dart';
 
 @freezed
-abstract class PodacastModel with _$PodacastModel{
-  const factory PodacastModel({
+abstract class PodcastModel with _$PodcastModel{
+  const factory PodcastModel({
     required int id,
     required String title,
     required String description,
     required String coverImage,
     required int followersCount,
     required num rating,
-    required int episodesCount,
-  })=_PodacastModel;
+  })=_PodcastModel;
 
-  factory PodacastModel.fromJson(Map<String,Object?>json)=>_$PodacastModelFromJson(json);
+  factory PodcastModel.fromJson(Map<String,Object?>json)=>_$PodcastModelFromJson(json);
 }

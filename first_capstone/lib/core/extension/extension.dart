@@ -1,3 +1,5 @@
+
+// this extension formats the time in episode player
 extension DurationFormat on Duration {
   String format() {
     final h = inHours;

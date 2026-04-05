@@ -1,4 +1,5 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
+import 'package:first_capstone/core/theme/cubit/theme_cubit.dart';
 import 'package:first_capstone/features/profile/cubit/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,13 +20,27 @@ class ProfileScreen extends StatelessWidget {
           child: BlocBuilder<ProfileCubit, ProfileState>(
             builder: (context, state) {
               if (state is ProfileInitial) {
-                print("hei");
                 Center(child: CircularProgressIndicator());
               } else if (state is ProfileInfoLoaded) {
-                print("h4i");
-
                 return Column(
                   children: [
+                    Align(
+                      alignment: .centerStart,
+                      child: BlocBuilder<ThemeCubit, ThemeMode>(
+                        builder: (context, themeState) {
+                          return IconButton(
+                            onPressed: () {
+                              context.read<ThemeCubit>().switchTheme();
+                            },
+                            icon: Icon(
+                              themeState == ThemeMode.dark
+                                  ? Icons.dark_mode
+                                  : Icons.light_mode,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
                     Center(child: CircleAvatar(radius: 50)),
                     Gap(20),
                     Text(
@@ -112,7 +127,9 @@ class ProfileScreen extends StatelessWidget {
                     Align(
                       alignment: AlignmentGeometry.bottomRight,
                       child: FilledButton(
-                        onPressed: () {context.go(RouteKeys.login);},
+                        onPressed: () {
+                          context.go(RouteKeys.login);
+                        },
                         style: FilledButton.styleFrom(
                           backgroundColor: Theme.of(context).colorScheme.error,
                         ),

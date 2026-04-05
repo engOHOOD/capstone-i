@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 class PodcatWidget extends StatelessWidget {
   const PodcatWidget({super.key, required this.podcasts});
-  final List<PodacastModel> podcasts;
+  final List<PodcastModel> podcasts;
 
   @override
   Widget build(BuildContext context) {

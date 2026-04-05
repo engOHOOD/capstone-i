@@ -7,10 +7,12 @@ part 'all_podcasts_state.dart';
 
 class AllPodcastsCubit extends Cubit<AllPodcastsState> {
   final PodcastRepo podcastRepo;
+  
   AllPodcastsCubit({required this.podcastRepo}) : super(AllPodcastsInitial());
 
+ // shows all episodes in ascending order by date
   Future<void> showAllPodcasts() async {
-    List<PodacastModel> podcats = await podcastRepo.loadPodcasts();
+    List<PodcastModel> podcats = await podcastRepo.loadPodcasts();
     emit(LoadedAllPodcasts(podcasts: podcats));
   }
 }

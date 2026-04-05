@@ -14,16 +14,16 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   Future<void> showPodcasts() async {
-    List<PodacastModel> podcats = await podcastRepo.loadPodcasts();
+    List<PodcastModel> podcats = await podcastRepo.loadPodcasts();
     podcats.sort((a, b) => a.followersCount.compareTo(b.followersCount));
-    List<PodacastModel> topFive = podcats.take(5).toList();
+    List<PodcastModel> topFive = podcats.take(5).toList();
     emit(LoadedPodcasts(podcasts: topFive));
   }
 
   Future<void> showEpsiodes() async {
-    List<EpsiodeModel> epsiodes = await podcastRepo.loadEpsiodes();
+    List<EpisodeModel> epsiodes = await podcastRepo.loadEpsiodes();
     epsiodes.sort((a, b) => a.likes.compareTo(b.likes));
-    List<EpsiodeModel> topFive = epsiodes.take(5).toList();
+    List<EpisodeModel> topFive = epsiodes.take(5).toList();
     emit(LoadedEpsiodes(epsiodes: topFive));
   }
 Future<void> search(String search) async {

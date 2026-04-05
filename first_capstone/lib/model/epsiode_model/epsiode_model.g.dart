@@ -6,8 +6,8 @@ part of 'epsiode_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_EpsiodeModel _$EpsiodeModelFromJson(Map<String, dynamic> json) =>
-    _EpsiodeModel(
+_EpisodeModel _$EpisodeModelFromJson(Map<String, dynamic> json) =>
+    _EpisodeModel(
       id: (json['id'] as num).toInt(),
       podcastId: (json['podcastId'] as num).toInt(),
       title: json['title'] as String,
@@ -17,10 +17,9 @@ _EpsiodeModel _$EpsiodeModelFromJson(Map<String, dynamic> json) =>
       publishDate: DateTime.parse(json['publishDate'] as String),
       plays: (json['plays'] as num).toInt(),
       likes: (json['likes'] as num).toInt(),
-      comments: (json['comments'] as num).toInt(),
     );
 
-Map<String, dynamic> _$EpsiodeModelToJson(_EpsiodeModel instance) =>
+Map<String, dynamic> _$EpisodeModelToJson(_EpisodeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'podcastId': instance.podcastId,
@@ -31,5 +30,4 @@ Map<String, dynamic> _$EpsiodeModelToJson(_EpsiodeModel instance) =>
       'publishDate': instance.publishDate.toIso8601String(),
       'plays': instance.plays,
       'likes': instance.likes,
-      'comments': instance.comments,
     };

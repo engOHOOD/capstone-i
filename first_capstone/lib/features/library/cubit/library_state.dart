@@ -6,8 +6,8 @@ sealed class LibraryState {}
 final class LibraryInitial extends LibraryState {}
 
 class LibraryLoaded extends LibraryState {
-  final List<PodacastModel> podcasts;
-  final List<EpsiodeModel> epsiodes;
+  final List<PodcastModel> podcasts;
+  final List<EpisodeModel> epsiodes;
 
   LibraryLoaded({required this.podcasts, required this.epsiodes});
 }

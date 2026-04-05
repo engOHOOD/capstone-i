@@ -6,12 +6,12 @@ sealed class PodcastState {}
 final class PodcastInitial extends PodcastState {}
 
 final class LoadedPodcast extends PodcastState {
-  final PodacastModel podcast;
+  final PodcastModel podcast;
 
   LoadedPodcast({required this.podcast});
 }
 final class LoadedPodcastEpsiodes extends PodcastState {
-  final List<EpsiodeModel> epsiodes;
+  final List<EpisodeModel> epsiodes;
 
   LoadedPodcastEpsiodes({required this.epsiodes});
 }

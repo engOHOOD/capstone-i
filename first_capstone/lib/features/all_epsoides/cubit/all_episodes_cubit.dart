@@ -9,8 +9,10 @@ class AllEpisodesCubit extends Cubit<AllEpisodesState> {
   final PodcastRepo podcastRepo;
   AllEpisodesCubit({required this.podcastRepo}) : super(AllEpisodesInitial());
 
+
+  // loads all episodes in ascending order by date
  Future<void> loadAllEpisodes() async {
-    List<EpsiodeModel> allEpisodes = await podcastRepo.loadEpsiodes();
+    List<EpisodeModel> allEpisodes = await podcastRepo.loadEpsiodes();
     allEpisodes.sort((a, b) => b.publishDate.compareTo(a.publishDate));
     emit(LoadedAllEpisodes(allEpisodes: allEpisodes));
   }

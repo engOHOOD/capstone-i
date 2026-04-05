@@ -7,8 +7,8 @@ part 'epsiode_model.freezed.dart';
 part 'epsiode_model.g.dart';
 
 @freezed
-abstract class EpsiodeModel with _$EpsiodeModel {
-  const factory EpsiodeModel({
+abstract class EpisodeModel with _$EpisodeModel {
+  const factory EpisodeModel({
     required int id,
     required int podcastId,
     required String title,
@@ -18,9 +18,8 @@ abstract class EpsiodeModel with _$EpsiodeModel {
     required DateTime publishDate,
     required int plays,
     required int likes,
-    required int comments,
-  }) = _EpsiodeModel;
+  }) = _EpisodeModel;
 
-  factory EpsiodeModel.fromJson(Map<String, Object?> json) =>
-      _$EpsiodeModelFromJson(json);
+  factory EpisodeModel.fromJson(Map<String, Object?> json) =>
+      _$EpisodeModelFromJson(json);
 }
