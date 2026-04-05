@@ -61,7 +61,6 @@ class RouteApp {
                     path: RouteKeys.podcast,
                     builder: (context, state) {
                       final id = state.extra as int;
-                      print("here1$id");
                       return BlocProvider(
                         create: (context) =>
                             PodcastCubit(podcastRepo: GetIt.I.get(), id: id),
@@ -110,7 +109,6 @@ class RouteApp {
               GoRoute(
                 path: RouteKeys.search,
                 builder: (context, state) {
-                  print("here");
 
                   return BlocProvider(
                     create: (context) =>

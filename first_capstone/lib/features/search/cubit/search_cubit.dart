@@ -38,10 +38,5 @@ Future<void> search(String search) async {
       .where((e) => e.title.contains(search.trim()))
       .toList();
 
-  // Debug print statements
-  print("Search query: $search");
-  print("Filtered Podcasts: ${filteredPodcasts.map((p) => p.title).toList()}");
-  print("Filtered Episodes: ${filteredEpisodes.map((e) => e.title).toList()}");
-
   emit(SearchResult(podcasts: filteredPodcasts, epsiodes: filteredEpisodes));
 }}

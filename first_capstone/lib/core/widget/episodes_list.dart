@@ -29,22 +29,7 @@ class EpisodesList extends StatelessWidget {
                     placeholderWidget: CircularProgressIndicator(),
                     errorWidget: Icon(Icons.error),
                   ),
-                  trailing: Container(
-                    width: 60,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.amber.shade400,
-                      borderRadius: BorderRadius.circular(120),
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.play_arrow,
-                        color: Theme.of(context).colorScheme.surface,
-                        size: 18,
-                      ),
-                    ),
-                  ),
+                 
                 ),
               ),
             );
