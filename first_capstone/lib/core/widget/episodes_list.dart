@@ -17,19 +17,22 @@ class EpisodesList extends StatelessWidget {
                   "${RouteKeys.home}/${RouteKeys.episode}",
                   extra: episodes[index].id,
                 ),
-                child: ListTile(
-                  title: Text(
-                    episodes[index].title,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: Text(
+                      episodes[index].title,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    leading: AnyImageView(
+                      imagePath: episodes[index].coverImage,
+                      fit: .fitHeight,
+                      borderRadius: BorderRadius.circular(5),
+                      placeholderWidget: CircularProgressIndicator(),
+                      errorWidget: Icon(Icons.error),
+                    ),
+                   
                   ),
-                  leading: AnyImageView(
-                    imagePath: episodes[index].coverImage,
-                    fit: .fitHeight,
-                    borderRadius: BorderRadius.circular(5),
-                    placeholderWidget: CircularProgressIndicator(),
-                    errorWidget: Icon(Icons.error),
-                  ),
-                 
                 ),
               ),
             );

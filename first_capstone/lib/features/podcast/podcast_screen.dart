@@ -1,10 +1,12 @@
 import 'package:any_image_view/any_image_view.dart';
+import 'package:first_capstone/core/navigation/route_keys.dart';
 import 'package:first_capstone/core/widget/image_widget.dart';
 import 'package:first_capstone/features/podcast/cubit/podcast_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sizer/sizer.dart';
 
 class PodcastScreen extends StatelessWidget {
   const PodcastScreen({super.key});
@@ -31,7 +33,6 @@ class PodcastScreen extends StatelessWidget {
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcast) {
-
                   return SliverMainAxisGroup(
                     slivers: [
                       SliverAppBar(
@@ -82,13 +83,11 @@ class PodcastScreen extends StatelessWidget {
             BlocBuilder<PodcastCubit, PodcastState>(
               buildWhen: (previous, current) {
                 if (current is LoadedPodcast) {
-
                   return true;
                 }
                 if (current is LoadedPodcastEpsiodes) {
                   return true;
                 } else {
-
                   return false;
                 }
               },
@@ -97,20 +96,29 @@ class PodcastScreen extends StatelessWidget {
                   return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 if (state is LoadedPodcastEpsiodes) {
-                  return SliverList.builder(
+                  return  SliverList.builder(
                     itemCount: state.epsiodes.length,
-                    itemBuilder: (context, index) => ListTile(
-                      leading: ImageWidget(
-                        imagePath: state.epsiodes[index].coverImage,
-                        imageWidth: 40,
-                        imageHight: 40,
-                        imageBorderRedius: 10,
-                        imagePadding: 2,
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () => context.push(
+                        "${RouteKeys.home}/${RouteKeys.episode}",
+                        extra: state.epsiodes[index].id,
                       ),
-
-                      title: Text(
-                        state.epsiodes[index].title,
-                        style: Theme.of(context).textTheme.bodyLarge,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          leading: ImageWidget(
+                            imagePath: state.epsiodes[index].coverImage,
+                            imageWidth: 40,
+                            imageHight: 40,
+                            imageBorderRedius: 10,
+                            imagePadding: 2,
+                          ),
+                                          
+                          title: Text(
+                            state.epsiodes[index].title,
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+                        ),
                       ),
                     ),
                   );

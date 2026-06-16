@@ -32,7 +32,7 @@ class EpisodesHorizontalGridWidget extends StatelessWidget {
               title: Text(podcasts[index].title,style: Theme.of(context).textTheme.bodyLarge,),
               leading: AnyImageView(
                 imagePath: podcasts[index].coverImage,
-                fit: .fitHeight,
+                fit: .cover,
                 borderRadius: BorderRadius.circular(5),
                 placeholderWidget: CircularProgressIndicator(),
                 errorWidget: Icon(Icons.error),

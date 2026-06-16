@@ -1,5 +1,7 @@
 import 'package:first_capstone/core/navigation/route_keys.dart';
+import 'package:first_capstone/core/theme/cubit/theme_cubit.dart';
 import 'package:first_capstone/features/login/cubit/login_cubit.dart';
+import 'package:first_capstone/features/login/widget/field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +22,7 @@ class LoginScreen extends HookWidget {
     return Scaffold(
       body: BlocListener<LoginCubit, LoginState>(
         listener: (context, state) {
- if (loadingKey.currentContext != null &&
+          if (loadingKey.currentContext != null &&
               loadingKey.currentContext!.mounted) {
             context.pop();
           }
@@ -31,7 +33,7 @@ class LoginScreen extends HookWidget {
                 context: context,
                 barrierDismissible: false,
                 builder: (context) =>
-                    Center(child: CircularProgressIndicator(key: loadingKey,)),
+                    Center(child: CircularProgressIndicator(key: loadingKey)),
               );
             case SuccessState _:
               context.go(RouteKeys.home);
@@ -71,74 +73,77 @@ class LoginScreen extends HookWidget {
             padding: const EdgeInsets.all(16.0),
             child: BlocBuilder<LoginCubit, LoginState>(
               builder: (context, state) {
-                return Center(
-                  
-                  child: Card(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxWidth: 90.sw,
-                        maxHeight: 95.sw,
+                return Column(
+                  children: [
+                     Align(
+                      alignment: .centerStart,
+                      child: BlocBuilder<ThemeCubit, ThemeMode>(
+                        builder: (context, themeState) {
+                          return IconButton(
+                            onPressed: () {
+                              context.read<ThemeCubit>().switchTheme();
+                            },
+                            icon: Icon(
+                              themeState == ThemeMode.dark
+                                  ? Icons.dark_mode
+                                  : Icons.light_mode,
+                            ),
+                          );
+                        },
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisAlignment: .center,
-                          children: [
-                            Text(
-                              "اهلا بك في سرد",
-                              style: Theme.of(context).textTheme.titleLarge,
-                            ),
-                            Gap(10),
-                              Text(
-                              "يرجى تسجيل الدخول",
-                              style: Theme.of(context).textTheme.titleSmall,
-                            ),
-                            Gap(30),
-                            TextFormField(
-                              textDirection: .ltr,
-                              controller: emailController,
-                              decoration: InputDecoration(
-                                hintText: "Email",
-                                hintTextDirection: .ltr,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
+                    ),
+                    Image.asset("assets/images/logo.png",height: 50.sw,width: 50.sw,),
+                    Center(
+                      
+                      child: Card(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: 90.sw,
+                            maxHeight: 95.sw,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisAlignment: .center,
+                              children: [
+                                Text(
+                                  "اهلا بك في سرد",
+                                  style: Theme.of(context).textTheme.titleLarge,
                                 ),
-                              ),
-                              onTapOutside: (value) {
-                                FocusManager.instance.primaryFocus?.unfocus();
-                              },
-                            ),
-                            Gap(20),
-                            TextFormField(
-                              textDirection: .ltr,
-                              controller: passwordController,
-                              decoration: InputDecoration(
-                                hintText: "Password",
-                                hintTextDirection: .ltr,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
+                                Gap(10),
+                                Text(
+                                  "يرجى تسجيل الدخول",
+                                  style: Theme.of(context).textTheme.titleSmall,
                                 ),
-                              ),
-                              onTapOutside: (value) {
-                                FocusManager.instance.primaryFocus?.unfocus();
-                              },
+                                Gap(30),
+                                FieldWidget(
+                                  hint: "Email",
+                                  controller: emailController,
+                                ),
+                    
+                                Gap(20),
+                                FieldWidget(
+                                  hint: "Password",
+                                  controller: passwordController,
+                                ),
+                    
+                                Gap(20),
+                                FilledButton(
+                                  onPressed: () {
+                                    context.read<LoginCubit>().checkLogin(
+                                      emailController.text,
+                                      passwordController.text,
+                                    );
+                                  },
+                                  child: Text("تسجيل الدخول"),
+                                ),
+                              ],
                             ),
-
-                            Gap(20),
-                            FilledButton(
-                              onPressed: () {
-                                context.read<LoginCubit>().checkLogin(
-                                  emailController.text,
-                                  passwordController.text,
-                                );
-                              },
-                              child: Text("تسجيل الدخول"),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 );
               },
             ),

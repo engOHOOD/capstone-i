@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:meta/meta.dart';
-
 part 'episode_player_state.dart';
 
 class EpisodePlayerCubit extends Cubit<EpisodePlayerState> {
@@ -26,7 +25,7 @@ class EpisodePlayerCubit extends Cubit<EpisodePlayerState> {
     epsiodePlayer.playerStateStream.listen((state) {
       if (state.processingState == ProcessingState.completed) {
         epsiodePosition = Duration.zero;
-
+        
         epsiodePlayer.pause();
         epsiodePlayer.seek(epsiodePosition);
       }
